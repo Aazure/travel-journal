@@ -743,6 +743,14 @@
     .meal-status-bar strong{font-size:1.12rem}
     .meal-notice{background:#fff5e1;border:2px dashed var(--ink);border-radius:18px;padding:13px 15px;font-size:.9rem;margin-top:15px}
     @media(max-width:760px){.meal-strip{grid-template-columns:1fr;gap:8px}.meal-pill{padding:10px 12px}.meal-pill p{margin-top:3px}}
+  
+    /* Group A / Group B alternatives within the same shopping stop */
+    .split-plan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+    .split-option{background:#FFFCF6;border:2px solid var(--ink);border-radius:16px;padding:12px}
+    .split-option strong{display:block;margin-bottom:5px}
+    .split-option p{margin:0;font-size:.92rem}
+    .split-rejoin{grid-column:1/-1;background:var(--green);border:2px dashed var(--ink);border-radius:14px;padding:9px 12px;font-size:.9rem}
+    @media(max-width:640px){.split-plan{grid-template-columns:1fr}.split-rejoin{grid-column:1}}
   </style>
 </head>
 <body>
@@ -1040,7 +1048,12 @@
           <p>先寄放行李；住宿鎖定札幌站附近、附天然溫泉的飯店（GRANBELL／Monterey Edelhof 優先候選，尚未訂房）。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">下午</div><div class="timeline-card"><div class="timeline-title"><strong>札幌站購物補貨</strong><span class="status optional">選去</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
-          <p><strong>MUJI、UNIQLO、Pokémon Center SAPPORO、SHIRO</strong> 視所在百貨與開店時間順路逛；另可吃雪印 Snow Royal 冰淇淋。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <p><strong>四個人都留在大丸札幌店</strong>，只有兩人去 8F Pokémon Center，另外兩人逛百貨；UNIQLO、無印、SHIRO 不強排在這段時間，留作其他日期備選。</p>
+          <div class="split-plan" aria-label="12月20日札幌大丸館內兩組自由活動">
+            <div class="split-option"><strong>🧸 角色組｜2 人</strong><p>大丸 8F Pokémon Center SAPPORO，買北海道限定／喜歡的角色周邊，約 45～60 分鐘。</p></div>
+            <div class="split-option"><strong>🛍️ 自由活動組｜2 人</strong><p>同一棟大丸：B1F 北海道甜點與食品街、1F 精品與美妝、其他樓層服飾或 8F 咖啡／餐廳。依興趣自由選，不出百貨。</p></div>
+            <div class="split-rejoin"><strong>📍 會合：</strong>大丸 1F 入口附近，時間依東京飛札幌航班及當日購物情況確認。</div>
+          </div></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">傍晚</div><div class="timeline-card"><div class="timeline-title"><strong>大通公園聖誕市集・白色燈樹節</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
           <p>享受北海道冬夜、攤位熱飲與聖誕燈飾；活動項目以官方 2026 年公告為準。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
@@ -1110,6 +1123,11 @@
                   <div class="timeline-title"><strong>吉伊卡哇 MOGUMOGU 小樽店</strong><span class="must-go">必去</span></div>
                   <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
                   <p>位於<strong>堺町 6-1</strong>，先買北海道／小樽限定周邊，早去比較不容易受售完影響。官方一般營業 09:30–17:30，入店規則依公告。</p><div class="source-links"><a href="https://www.chiikawamogumogu.jp/stores/otaru/" target="_blank" rel="noopener noreferrer">官方商店資訊 ↗</a></div>
+                  <div class="split-plan" aria-label="12月21日小樽堺町通兩組自由活動">
+                    <div class="split-option"><strong>🧸 角色組｜2 人</strong><p>10:05～11:00 吉伊卡哇 MOGUMOGU 小樽店（堺町 6-1），挑小樽限定周邊。</p></div>
+                    <div class="split-option"><strong>🎵🪟 自由活動組｜2 人</strong><p>古董音樂盒 2 號館（堺町 6-13，約步行 2～4 分）及北一硝子三號館（堺町 7-26，約步行 5～8 分）；若要聽完整演奏建議選一間，玻璃工藝為參觀商店而非手作體驗。</p></div>
+                    <div class="split-rejoin"><strong>📍 11:00 會合：</strong>六花亭小樽運河店（堺町 7-22）；之後 LeTAO、蒲榮、運河藍調、天狗山四人一起走。</div>
+                  </div>
                 </div>
               </li>
               <li class="timeline-item">
@@ -1251,7 +1269,12 @@
           <p><strong>白天下午時段</strong>優先；若本店人多，可改大丸札幌店，兩店擇一即可。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">16:00–17:30</div><div class="timeline-card"><div class="timeline-title"><strong>札幌 PARCO｜吉伊卡哇＋鞋店</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
-          <p>Chiikawa Land、Onitsuka Tiger 等；<strong>mont-bell</strong>可視時間轉往附近分店，若時間不夠就優先角色商品。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <p><strong>16:00～17:30 四個人都留在札幌 PARCO。</strong>吉伊卡哇與自由逛街分成兩組；這段不安排去別棟的 mont-bell，留待有空再去。</p>
+          <div class="split-plan" aria-label="12月23日札幌PARCO館內兩組自由活動">
+            <div class="split-option"><strong>🧸 角色組｜2 人</strong><p>本館 B2F Chiikawa Land 札幌，專心補買吉伊卡哇周邊。</p></div>
+            <div class="split-option"><strong>🛍️ 自由活動組｜2 人</strong><p>同棟本館 5F／6F 無印良品、1F POTR 包袋及 Onitsuka Tiger。注意鬼塚虎須從站前通側 1F 獨立入口進入，館內無法直接通行。</p></div>
+            <div class="split-rejoin"><strong>📍 17:30 會合：</strong>札幌 PARCO 本館 1F 主入口，再一起去狸小路藥妝及超市採買。</div>
+          </div></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">17:30–19:00</div><div class="timeline-card"><div class="timeline-title"><strong>狸小路藥妝：サツドラ＋松本清</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
           <p>一次比價集中購買防曬、保養、藥品、生活用品；同款看總容量及單價。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
@@ -1333,7 +1356,7 @@
           <span><span class="shop-title">Pokémon Center SAPPORO</span><span class="shop-small" style="display:block">札幌｜12/20<br>札幌大丸補買角色商品</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop23" aria-label="已逛 SHIRO 香氛"/>
           <span><span class="shop-title">SHIRO 香氛</span><span class="shop-small" style="display:block">札幌｜12/20<br>札幌站附近順路試香</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop24" aria-label="已逛 UNIQLO"/>
           <span><span class="shop-title">UNIQLO</span><span class="shop-small" style="display:block">札幌｜12/20 或 12/23<br>HEATTECH、冬衣基本款</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop25" aria-label="已逛 吉伊卡哇 MOGUMOGU 小樽"/>
-          <span><span class="shop-title">吉伊卡哇 MOGUMOGU 小樽</span><span class="shop-small" style="display:block">札幌｜12/21<br>小樽限定商品最重要</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop26" aria-label="已逛 Chiikawa Land 札幌"/>
+          <span><span class="shop-title">吉伊卡哇 MOGUMOGU 小樽</span><span class="shop-small" style="display:block">小樽｜12/21<br>小樽限定商品最重要</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop26" aria-label="已逛 Chiikawa Land 札幌"/>
           <span><span class="shop-title">Chiikawa Land 札幌</span><span class="shop-small" style="display:block">札幌｜12/23<br>札幌 PARCO 補貨</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop27" aria-label="已逛 Onitsuka Tiger 札幌"/>
           <span><span class="shop-title">Onitsuka Tiger 札幌</span><span class="shop-small" style="display:block">札幌｜12/23<br>札幌 PARCO，東京漏買可補</span><span class="shop-badge">候補</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop28" aria-label="已逛 mont-bell"/>
           <span><span class="shop-title">mont-bell</span><span class="shop-small" style="display:block">札幌｜12/23<br>羽絨、保暖中層和防水裝備</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop36" aria-label="已採買 北海道神宮限定 神宮の梅 梅酒"/>
