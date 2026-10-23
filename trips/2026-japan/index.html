@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東京＋北海道冬日旅程｜2026/12/17–12/24 V4</title>
+  <meta name="description" content="東京與北海道冬日旅遊行程網站，含航班、每日行程、住宿、待辦清單、冬季美食與倒數。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FFFCF6;
+      --ink:#3E3A39;
+      --pink:#F2A497;
+      --yellow:#F6D27A;
+      --blue:#A8D3E6;
+      --green:#B9DAA5;
+      --white:#fffdf9;
+      --shadow:0 4px 0 0 var(--ink);
+      --radius:24px;
+      --radius-sm:16px;
+      --border:3px solid var(--ink);
+      --nav-h:72px;
+      --max:1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Huninn", system-ui, sans-serif;
+      line-height:1.6;
+    }
+
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+
+    .container{
+      width:min(calc(100% - 24px), var(--max));
+      margin:0 auto;
+    }
+
+    .site-nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,252,246,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom:var(--border);
+    }
+
+    .nav-inner{
+      min-height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+
+    .brand-badge{
+      width:44px;
+      height:44px;
+      border:var(--border);
+      border-radius:16px;
+      background:var(--yellow);
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+      box-shadow:var(--shadow);
+    }
+
+    .brand-title{
+      font-size:1rem;
+      font-weight:700;
+      line-height:1.2;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a{
+      padding:8px 14px;
+      border:var(--border);
+      border-radius:999px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      font-size:.95rem;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{
+      transform:translateY(-2px);
+    }
+
+    section{
+      scroll-margin-top:92px;
+      padding:28px 0 10px;
+    }
+
+    .hero{
+      padding-top:22px;
+    }
+
+    .hero-card{
+      border:var(--border);
+      border-radius:36px;
+      background:#fffdfb;
+      box-shadow:var(--shadow);
+      padding:22px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border:var(--border);
+      border-radius:999px;
+      background:var(--green);
+      box-shadow:var(--shadow);
+      font-size:.9rem;
+      margin-bottom:12px;
+    }
+
+    h1,h2,h3{
+      line-height:1.25;
+      margin:0 0 10px;
+    }
+
+    h1{
+      font-size:clamp(2rem,6vw,3.4rem);
+      margin-bottom:10px;
+    }
+
+    h2{
+      font-size:clamp(1.35rem,4vw,2rem);
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      margin:0 0 14px;
+      font-size:1rem;
+    }
+
+    .hero-meta{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .mini-card{
+      border:var(--border);
+      border-radius:22px;
+      background:#fff;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:1.25rem;
+      margin-top:4px;
+    }
+
+    .countdown{
+      background:var(--pink);
+    }
+
+    .hero-illust{
+      border:var(--border);
+      border-radius:30px;
+      background:#fff;
+      padding:12px;
+      box-shadow:var(--shadow);
+    }
+
+    .section-card{
+      border:var(--border);
+      border-radius:30px;
+      background:#fffdfb;
+      box-shadow:var(--shadow);
+      padding:20px;
+    }
+
+    .cards{
+      display:grid;
+      gap:16px;
+    }
+
+    .flight-grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns:1fr;
+    }
+
+    .flight-card{
+      border:var(--border);
+      border-radius:24px;
+      padding:16px;
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .flight-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:8px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:6px 10px;
+      border:var(--border);
+      border-radius:999px;
+      background:var(--yellow);
+      box-shadow:var(--shadow);
+      font-size:.85rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .pill.blue{ background:var(--blue); }
+    .pill.pink{ background:var(--pink); }
+    .pill.green{ background:var(--green); }
+
+    .route{
+      font-size:1.2rem;
+      font-weight:700;
+      margin:6px 0;
+    }
+
+    .sub{
+      color:#5f5a58;
+      font-size:.95rem;
+    }
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      overflow:auto;
+      padding-bottom:4px;
+      margin-bottom:18px;
+      scrollbar-width:thin;
+    }
+
+    .tab-btn{
+      flex:0 0 auto;
+      min-width:122px;
+      padding:12px 14px;
+      border:var(--border);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      text-align:left;
+      font:inherit;
+      color:inherit;
+      cursor:pointer;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .tab-btn strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:2px;
+    }
+
+    .tab-btn small{
+      color:#5f5a58;
+      font-size:.82rem;
+    }
+
+    .tab-btn.active{
+      background:var(--yellow);
+      animation:bounceIn .32s ease;
+    }
+
+    .tab-panel{
+      display:none;
+      animation:fadeUp .28s ease;
+    }
+    .tab-panel.active{ display:block; }
+
+    .day-header{
+      display:grid;
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .day-note{
+      border:var(--border);
+      border-radius:20px;
+      background:#fff;
+      padding:12px 14px;
+      box-shadow:var(--shadow);
+      font-size:.95rem;
+    }
+
+    .timeline{
+      position:relative;
+      list-style:none;
+      padding:8px 0 0 0;
+      margin:0;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:30px;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:var(--ink);
+      border-radius:999px;
+      opacity:.16;
+    }
+
+    .timeline-item{
+      position:relative;
+      display:grid;
+      grid-template-columns:70px 1fr;
+      gap:14px;
+      padding:0 0 18px;
+    }
+
+    .timeline-time{
+      font-weight:700;
+      font-size:.98rem;
+      text-align:center;
+      padding-top:4px;
+    }
+
+    .timeline-dot{
+      position:absolute;
+      left:21px;
+      top:10px;
+      width:21px;
+      height:21px;
+      border:var(--border);
+      background:var(--pink);
+      border-radius:999px;
+      box-shadow:0 2px 0 0 var(--ink);
+    }
+
+    .timeline-card{
+      border:var(--border);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+
+    .timeline-title{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      margin-bottom:6px;
+    }
+
+    .must-go{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 8px;
+      border:var(--border);
+      border-radius:999px;
+      background:var(--pink);
+      box-shadow:var(--shadow);
+      font-size:.8rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .transport-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 6px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 10px;
+      border:var(--border);
+      border-radius:999px;
+      box-shadow:var(--shadow);
+      font-size:.82rem;
+      font-weight:700;
+      background:#fff;
+    }
+
+    .tag.train{ background:var(--yellow); }
+    .tag.walk{ background:var(--green); }
+    .tag.flight{ background:var(--blue); }
+    .tag.bus{ background:var(--pink); }
+
+    .columns{
+      display:grid;
+      gap:16px;
+      grid-template-columns:1fr;
+    }
+
+    .todo-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .todo-item{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      border:var(--border);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      padding:12px 14px;
+    }
+
+    .todo-item input{
+      width:22px;
+      height:22px;
+      margin:2px 0 0;
+      accent-color:var(--green);
+      flex-shrink:0;
+    }
+
+    .stay-grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns:1fr;
+    }
+
+    .stay-card{
+      border:var(--border);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+
+    .stay-card .place{
+      font-size:1.08rem;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .footer{
+      padding:34px 0 50px;
+      text-align:center;
+      color:#5f5a58;
+      font-size:.95rem;
+    }
+
+    /* SVG motion */
+    .floaty{
+      animation:floaty 3.4s ease-in-out infinite;
+      transform-origin:center;
+    }
+    .floaty-slow{
+      animation:floaty 4.8s ease-in-out infinite;
+      transform-origin:center;
+    }
+    .sway{
+      animation:sway 2.6s ease-in-out infinite;
+      transform-origin:center;
+    }
+    .blink{
+      animation:blink 5s ease-in-out infinite;
+      transform-origin:center;
+    }
+
+    @keyframes floaty{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-8px); }
+    }
+    @keyframes sway{
+      0%,100%{ transform:rotate(0deg); }
+      50%{ transform:rotate(2deg); }
+    }
+    @keyframes blink{
+      0%, 47%, 100%{ opacity:1; }
+      49%, 51%{ opacity:.3; }
+    }
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(10px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+    @keyframes bounceIn{
+      0%{ transform:scale(.96); }
+      60%{ transform:scale(1.03); }
+      100%{ transform:scale(1); }
+    }
+
+    @media (min-width: 760px){
+      .hero-grid{
+        grid-template-columns:1.1fr .9fr;
+        gap:22px;
+      }
+      .hero-meta{
+        grid-template-columns:repeat(3, minmax(0,1fr));
+      }
+      .flight-grid{
+        grid-template-columns:repeat(3, 1fr);
+      }
+      .columns{
+        grid-template-columns:1fr 1fr;
+      }
+      .stay-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (min-width: 980px){
+      .section-card{ padding:24px; }
+      .nav-links{ gap:12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *, *::before, *::after{
+        animation:none !important;
+        transition:none !important;
+      }
+    }
+
+    /* 旅程更新：小樽藍調攝影與北海道食材筆記 */
+    .photo-window{
+      border:var(--border);
+      background:var(--blue);
+      border-radius:22px;
+      padding:16px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .photo-window h4{font-size:1.15rem; margin:0 0 8px; line-height:1.35;}
+    .photo-window p{margin:6px 0 0;}
+    .photo-bands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px;}
+    .photo-band{border:2px solid var(--ink);background:#fffdf9;border-radius:14px;padding:10px;font-size:.87rem;}
+    .photo-band strong{display:block;white-space:nowrap;}
+    .hint-list{margin:12px 0 0;padding-left:24px;}
+    .hint-list li{margin:4px 0;}
+    .source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+    .source-links a{display:inline-block;border:2px solid var(--ink);border-radius:999px;background:#fffdf9;padding:4px 10px;font-size:.83rem;}
+    .timeline-card p{margin:6px 0 0;}
+    .food-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+    .food-card{border:var(--border);border-radius:19px;padding:14px;background:#fff;box-shadow:var(--shadow);}
+    .food-card h3{font-size:1rem; margin-bottom:7px;}
+    .food-card p{font-size:.94rem;margin:0;}
+    .note-warn{background:var(--yellow);border:var(--border);border-radius:17px;padding:12px 14px;margin-top:14px;}
+    @media(max-width:540px){
+      .photo-bands{grid-template-columns:1fr;}
+      .food-grid{grid-template-columns:1fr;}
+      .photo-band{padding:8px 10px;}
+    }
+
+    /* v3：購物、美食整合與實用互動 */
+    .nav-links a{font-size:.86rem;padding:7px 11px}
+    .pill.ghost{background:#fffdf9}
+    .pill.selected{background:var(--green)}
+    .subheading{font-size:1.04rem;margin:12px 0 8px}
+    .plan-note{border:var(--border);border-radius:19px;padding:13px 15px;background:#fff7e5;box-shadow:var(--shadow);margin:12px 0 17px}
+    .plan-note p{margin:0}
+    .timeline-card .shop-names{font-weight:700}
+    .timeline-card .small{font-size:.89rem;color:#5e5956}
+    .status{display:inline-block; padding:3px 8px; border:2px solid var(--ink);border-radius:999px;font-size:.75rem;font-weight:700;white-space:nowrap;background:var(--green)}
+    .status.optional{background:#fffdf9}
+    .status.booking{background:var(--yellow)}
+    .status.photo{background:var(--blue)}
+    .day-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 16px}
+    .day-summary > div{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:11px;font-size:.88rem}
+    .day-summary b{display:block;font-size:.8rem;color:#6c6662;margin-bottom:2px}
+    .choices{margin-top:10px;padding:10px 12px;background:#f2f8ed;border:2px dashed var(--ink);border-radius:14px}
+    .choices p{margin:0;font-size:.9rem}
+    .filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0}
+    .filter-btn{font:inherit;font-size:.88rem;border:2px solid var(--ink);background:#fffdf9;border-radius:999px;box-shadow:0 2px 0 var(--ink);padding:7px 12px;cursor:pointer}
+    .filter-btn[aria-pressed="true"]{background:var(--yellow)}
+    .shop-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .shop-entry{display:flex;align-items:flex-start;gap:10px;border:2px solid var(--ink);border-radius:18px;padding:12px;background:#fff;min-width:0}
+    .shop-entry input{width:20px;height:20px;flex:none;accent-color:#8baf74;margin-top:3px}
+    .shop-entry .shop-title{font-weight:700;line-height:1.3}
+    .shop-entry .shop-small{font-size:.82rem;color:#65605d;margin-top:4px}
+    .shop-entry .shop-badge{font-size:.74rem;border-radius:8px;background:#f7eee7;display:inline-block;padding:2px 6px;margin-top:6px}
+    .shop-entry.is-done{opacity:.6;background:#f5f4ef}
+    .shop-entry.is-done .shop-title{text-decoration:line-through}
+    .shop-entry[hidden]{display:none!important}
+    .progress-wrap{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:11px 13px;margin:8px 0}
+    .progress-track{height:10px;border:2px solid var(--ink);background:#f2f2ea;border-radius:10px;overflow:hidden;margin-top:7px}
+    .progress-fill{height:100%;width:0%;background:var(--green);transition:width .2s}
+    .venue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .venue-card{background:#fff;border:3px solid var(--ink);border-radius:22px;box-shadow:var(--shadow);padding:15px}
+    .venue-top{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+    .venue-card h3{font-size:1.1rem;line-height:1.4;margin:4px 0 7px}
+    .venue-card p{font-size:.91rem;margin:6px 0}
+    .venue-card .price{font-size:1.22rem;font-weight:700}
+    .venue-card .venue-meta{color:#59534e;font-size:.83rem}
+    .venue-card .venue-links{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+    .venue-links a{display:inline-block;border:2px solid var(--ink);background:#fff9e7;border-radius:999px;padding:5px 10px;font-size:.83rem}
+    .priorities{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
+    .priorities span{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:5px 10px;font-size:.84rem}
+    .tip-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+    .tip-strip .mini-card{background:#fff9e9}
+    .tip-strip .mini-card:nth-child(2){background:#eef8ed}
+    .tip-strip .mini-card:nth-child(3){background:#edf6fa}
+    .fine-print{font-size:.84rem;color:#635d59;line-height:1.6}
+    .print-note{display:none}
+    @media(max-width:760px){
+      .nav-inner{align-items:flex-start;flex-wrap:wrap}
+      .nav-links{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;width:100%;padding:3px 1px 7px}
+      .nav-links a{font-size:.83rem}
+      .shop-list,.venue-grid{grid-template-columns:1fr}
+      .tip-strip{grid-template-columns:1fr}
+      .day-summary{grid-template-columns:1fr}
+      .timeline-item{grid-template-columns:62px 1fr;gap:8px}
+      .timeline-time{font-size:.86rem}
+    }
+    @media print{
+      .site-nav,.filters,.source-links,.venue-links{display:none!important}
+      .tab-panel{display:block!important;break-inside:avoid}
+      .tab-panel,.venue-card,.timeline-card{break-inside:avoid}
+      .print-note{display:block}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">✈️</div>
+        <div class="brand-title">東京＋北海道<br>冬日旅程</div>
+      </div>
+      <nav class="nav-links" aria-label="主選單">
+        <a href="#home">首頁</a>
+        <a href="#flights">航班</a>
+        <a href="#itinerary">每日行程</a>
+        <a href="#shopping">購物清單</a>
+        <a href="#dining">美食地圖</a>
+        <a href="#seasonal-food">季節美食</a>
+        <a href="#todo">待辦清單</a>
+        <a href="#stay">住宿</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">2026 冬の旅 ✿ 東京・北海道</span>
+              <h1>東京與北海道的<br>可愛冬日冒險</h1>
+              <p>
+                東京走訪吉伊卡哇、任天堂、寶可夢與球鞋潮牌，再飛北海道追雪、吃海鮮、逛超市與甜點店。
+              </p>
+
+              <div class="hero-meta">
+                <div class="mini-card countdown">
+                  <div>距離出發還有</div>
+                  <strong id="countdownDays">-- 天</strong>
+                </div>
+                <div class="mini-card">
+                  <div>旅遊日期</div>
+                  <strong>12/17 → 12/24</strong>
+                </div>
+                <div class="mini-card">
+                  <div>旅遊重點</div>
+                  <strong>購物 × 雪景 × 美食</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-illust" aria-label="旅程插圖">
+              <svg viewBox="0 0 520 420" role="img" aria-label="東京塔、飛機、雪山、電車與可愛風景插圖">
+                <rect x="18" y="18" width="484" height="384" rx="36" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+                <ellipse cx="110" cy="86" rx="48" ry="24" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" class="floaty"/>
+                <ellipse cx="178" cy="74" rx="44" ry="22" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" class="floaty-slow"/>
+                <ellipse cx="418" cy="92" rx="52" ry="25" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" class="floaty"/>
+
+                <!-- Tokyo tower -->
+                <g class="sway">
+                  <path d="M130 286 L165 120 L200 286 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+                  <line x1="165" y1="120" x2="165" y2="286" stroke="#3E3A39" stroke-width="3"/>
+                  <line x1="146" y1="180" x2="184" y2="180" stroke="#3E3A39" stroke-width="3"/>
+                  <line x1="141" y1="210" x2="189" y2="210" stroke="#3E3A39" stroke-width="3"/>
+                  <line x1="136" y1="240" x2="194" y2="240" stroke="#3E3A39" stroke-width="3"/>
+                </g>
+
+                <!-- airplane -->
+                <g class="floaty">
+                  <path d="M265 108 C287 95, 325 91, 362 105 C371 108, 370 118, 360 120 C332 127, 297 127, 267 118 L236 128 L225 121 L247 108 L228 96 L238 89 Z"
+                        fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+                  <circle cx="349" cy="112" r="3" fill="#3E3A39"/>
+                </g>
+
+                <!-- mountains -->
+                <path d="M270 295 L332 208 L394 295 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M312 242 L332 208 L353 242 Z" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M334 295 L398 220 L462 295 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M381 246 L398 220 L416 246 Z" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+
+                <!-- train -->
+                <g class="blink">
+                  <rect x="60" y="296" width="154" height="54" rx="14" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+                  <rect x="78" y="309" width="24" height="18" rx="4" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+                  <rect x="109" y="309" width="24" height="18" rx="4" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+                  <rect x="140" y="309" width="24" height="18" rx="4" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+                  <rect x="171" y="309" width="24" height="18" rx="4" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+                  <circle cx="92" cy="354" r="10" fill="#3E3A39"/>
+                  <circle cx="183" cy="354" r="10" fill="#3E3A39"/>
+                </g>
+
+                <!-- snow ground -->
+                <path d="M40 332 Q130 310 220 332 T400 332 T480 332 L480 382 L40 382 Z" fill="#fff" stroke="#3E3A39" stroke-width="3"/>
+
+                <!-- tree -->
+                <g class="sway">
+                  <rect x="428" y="282" width="12" height="46" rx="6" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+                  <circle cx="434" cy="266" r="24" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+                  <circle cx="416" cy="278" r="18" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+                  <circle cx="451" cy="281" r="18" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+                </g>
+
+                <!-- stars -->
+                <circle cx="404" cy="55" r="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="441" cy="52" r="4" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="462" cy="68" r="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+
+                <text x="262" y="392" text-anchor="middle" font-size="18" fill="#3E3A39" font-family="Huninn, sans-serif">
+                  冬日小旅行 ♡
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flights">
+      <div class="container">
+        <div class="section-card">
+          <h2>✈️ 航班卡片</h2>
+          <div class="flight-grid">
+            <article class="flight-card">
+              <div class="flight-head">
+                <div>
+                  <div class="pill pink">去程國際線</div>
+                  <div class="route">台灣 → 東京（成田）</div>
+                  <div class="sub">2026 / 12 / 17（四）｜下午或晚上抵達</div>
+                </div>
+                <div class="pill">待確認</div>
+              </div>
+              <p>
+                建議抵達成田後入住東京市區，方便接下來兩天逛原宿、澀谷、池袋與聖誕燈飾。
+              </p>
+            </article>
+
+            <article class="flight-card">
+              <div class="flight-head">
+                <div>
+                  <div class="pill blue">日本國內線</div>
+                  <div class="route">東京 → 札幌（新千歲）</div>
+                  <div class="sub">2026 / 12 / 20（日）｜早上出發</div>
+                </div>
+                <div class="pill blue">ANA / 待確認</div>
+              </div>
+              <p>
+                建議上午班機，抵達後可前往札幌市區、吃美食並逛冬季聖誕市集。
+              </p>
+            </article>
+
+            <article class="flight-card">
+              <div class="flight-head">
+                <div>
+                  <div class="pill green">回程國際線</div>
+                  <div class="route">札幌（新千歲） → 台灣</div>
+                  <div class="sub">2026 / 12 / 24（四）｜回台北或台中</div>
+                </div>
+                <div class="pill green">二擇一</div>
+              </div>
+              <p>
+                可依最終票價決定回桃園或台中；當天建議預留時間採買 SNOWS 與辦理退稅／託運。
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary">
+      <div class="container">
+        <div class="section-card">
+          <h2>🗓️ 每日行程</h2>
+          <p class="fine-print">日期為 2026/12/17～12/24；列出的時間是規劃窗口，非已購票或確認訂位。<strong>重點</strong>為主要安排，<strong>選去</strong>及<strong>需預約</strong>視現場與訂位狀況調整。</p>
+
+          <div class="tabs" role="tablist" aria-label="日期切換">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="day1" id="tab1">
+              <strong>12/17</strong><small>東京抵達日</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day2" id="tab2">
+              <strong>12/18</strong><small>購物・PARCO</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day3" id="tab3">
+              <strong>12/19</strong><small>寶可夢・入鹿</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day4" id="tab4">
+              <strong>12/20</strong><small>飛往札幌</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day5" id="tab5">
+              <strong>12/21</strong><small>運河藍調・天狗山</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day6" id="tab6">
+              <strong>12/22</strong><small>青池點燈</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day7" id="tab7">
+              <strong>12/23</strong><small>聖代・採買</small>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day8" id="tab8">
+              <strong>12/24</strong><small>回台灣</small>
+            </button>
+          </div>
+
+<!-- day 1 v3 -->
+          <div class="tab-panel active" id="day1" role="tabpanel" aria-labelledby="tab1">
+            <div class="day-header"><h3>Day 1｜12/17（四） 東京抵達・丸之內聖誕氣氛</h3><div class="day-note">航班尚未確認。先辦理入境、入住；壽喜燒與寶可夢咖啡廳只能作為「抵達夠早＋訂到位」的候選，勿預付不可退款訂金。</div></div>
+            <div class="day-summary"><div><b>城市</b>東京</div><div><b>餐飲</b>晚餐彈性</div><div><b>重點</b>旅途緩衝</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">依航班</div><div class="timeline-card"><div class="timeline-title"><strong>抵達成田機場・前往東京飯店</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag flight">✈️ 航班</span></div>
+          <p>國際線、N’EX / Skyliner；依住宿區域選交通方式。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">傍晚</div><div class="timeline-card"><div class="timeline-title"><strong>飯店寄放行李／入住</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>整理行李、冬季外套，先確保隔天購物與池袋行程有體力。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">19:00 起</div><div class="timeline-card"><div class="timeline-title"><strong>東京車站・丸之內聖誕散步</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>若到東京市區時間足夠，逛東京車站、丸之內聖誕燈飾，簡單吃晚餐。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">選去</div><div class="timeline-card"><div class="timeline-title"><strong>人形町今半／寶可夢咖啡廳</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p><strong>僅在航班夠早而且訂到位時</strong>，安排壽喜燒（今半日本橋周邊分店）或日本橋 Pokémon Café；兩者不必同時排。</p></div></li></ol>
+          </div>
+          
+<!-- day 2 v3 -->
+          <div class="tab-panel" id="day2" role="tabpanel" aria-labelledby="tab2">
+            <div class="day-header"><h3>Day 2｜12/18（五） 原宿・表參道・澀谷｜球鞋潮牌＋兩大角色店</h3><div class="day-note">這天店很多，購物時間必須留彈性。<strong>澀谷 PARCO 的 Nintendo TOKYO＋Pokémon Center SHIBUYA 都要去</strong>，和表參道燈飾並列優先。YORONIKU 是晚餐首選，但要訂到合適時段才安排。</div></div>
+            <div class="day-summary"><div><b>購物</b>原宿・澀谷</div><div><b>甜點</b>千層酥／咖啡</div><div><b>晚餐</b>高級燒肉候選</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">10:30–11:40</div><div class="timeline-card"><div class="timeline-title"><strong>原宿吉伊卡哇＋限定麵包店候選</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>先到原宿逛街，Chiikawa Land 原宿店以<strong>約 11:00 開店</strong>規劃；吉伊卡哇麵包店須看有無開放與入店資格，<strong>不為候位犧牲下半天</strong>。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">11:30–13:30</div><div class="timeline-card"><div class="timeline-title"><strong>原宿球鞋：ASICS、Onitsuka Tiger、On</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>Cat Street 與周邊鞋店，挑日本限定配色；附近店面依實際地址與營業時間微調。可順買 UNIQLO。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">13:30–16:20</div><div class="timeline-card"><div class="timeline-title"><strong>表參道・青山：Hermès、LE LABO、藍瓶</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p><strong>HUMAN MADE、A.P.C.、Apple（選去）</strong>也可順路看；甜點優先推薦 GARIGUETTE 草莓千層酥，另一候選為 I’m donut?。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">16:40–18:00</div><div class="timeline-card"><div class="timeline-title"><strong>表參道聖誕燈飾・移動澀谷</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>預留夜色亮起的燈光拍攝；燈飾以官方當季公告為準。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">18:15–20:45</div><div class="timeline-card"><div class="timeline-title"><strong>澀谷 PARCO：任天堂＋寶可夢雙店</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>6F <strong>Nintendo TOKYO</strong>（皮克敏）＋<strong>Pokémon Center SHIBUYA</strong>（超夢展示）；同棟再看 HUMAN MADE、A.P.C.、LE LABO。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">晚間預約</div><div class="timeline-card"><div class="timeline-title"><strong>惠比壽 YORONIKU｜和牛燒肉</strong><span class="status booking">需訂位／預約</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p><strong>首選高級燒肉：</strong>參考套餐 ¥14,900，另計服務費，總價約 ¥16,390／人。<strong>晚餐時段依實際可預約空位</strong>，若沒有晚場，就改選 Ushigoro 或 KINTAN 並提前離開澀谷。</p><div class="source-links"><a target="_blank" rel="noopener noreferrer" href="https://www.tablecheck.com/ja/shops/ebisu-yoroniku/reserve">官方資訊／訂位 ↗</a></div></div></li></ol>
+          </div>
+          
+<!-- day 3 v3 -->
+          <div class="tab-panel" id="day3" role="tabpanel" aria-labelledby="tab3">
+            <div class="day-header"><h3>Day 3｜12/19（六） 池袋｜吉伊卡哇＋寶可夢 MEGA TOKYO・六本木入鹿</h3><div class="day-note">池袋同時有 Chiikawa Park、吉伊卡哇專賣店及 Pokémon Center MEGA TOKYO；這天可能需依門票時間調整。<strong>吉伊卡哇主題餐廳／拉麵 vs 今半壽喜燒擇一</strong>，晚上仍保留入鹿 TOKYO。</div></div>
+            <div class="day-summary"><div><b>角色</b>吉伊卡哇＋寶可夢</div><div><b>午餐</b>主題餐或壽喜燒</div><div><b>晚餐</b>入鹿 TOKYO</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">10:00–12:00</div><div class="timeline-card"><div class="timeline-title"><strong>Chiikawa Park｜吉伊卡哇樂園</strong><span class="status booking">需訂位／預約</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>位於池袋 Sunshine City 一帶；<strong>需先取得 12/19 門票</strong>，實際入場時段以票面為準。</p><div class="source-links"><a target="_blank" rel="noopener noreferrer" href="https://chiikawapark-tokyo.jp/en/">官方資訊／訂位 ↗</a></div></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">12:00–13:30</div><div class="timeline-card"><div class="timeline-title"><strong>午餐二選一：吉伊卡哇主題餐／人形町今半</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>A：池袋 PARCO <strong>吉伊卡哇餐廳或吉伊卡哇拉麵豚</strong>（視預約）；B：<strong>人形町今半池袋東武店</strong>壽喜燒，參考套餐約 ¥12,540～16,610（另計服務費）。</p><div class="source-links"><a target="_blank" rel="noopener noreferrer" href="https://restaurant.imahan.com/">官方資訊／訂位 ↗</a></div></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">13:30–15:15</div><div class="timeline-card"><div class="timeline-title"><strong>Pokémon Center MEGA TOKYO＋Pikachu Sweets</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p><strong>Sunshine City alpa 2F</strong>，寶可夢中心大型周邊、Pokémon GO Lab.、Pikachu Sweets 外帶甜點。這間與昨天澀谷店都會去。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">15:15–16:00</div><div class="timeline-card"><div class="timeline-title"><strong>池袋 Chiikawa Land 補貨</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>池袋 PARCO 的角色專賣店，若前面候位太久就縮短這一段。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">17:00 前後</div><div class="timeline-card"><div class="timeline-title"><strong>六本木 入鹿 TOKYO｜特製拉麵</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>推薦<strong>松露牛肝菌醬油拉麵</strong>；可能需要排隊，應以當日營業／售完資訊為準。午餐若吃高級壽喜燒，晚餐可考慮只吃一碗拉麵。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">入夜後</div><div class="timeline-card"><div class="timeline-title"><strong>六本木櫸木坂燈飾・夜間散步</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>吃完入鹿後拍夜景與燈飾，回飯店整理行李，準備隔天飛札幌。</p></div></li></ol>
+          </div>
+          
+<!-- day 4 v3 -->
+          <div class="tab-panel" id="day4" role="tabpanel" aria-labelledby="tab4">
+            <div class="day-header"><h3>Day 4｜12/20（日） 東京飛札幌・聖誕市集・北海道第一餐</h3><div class="day-note">東京→新千歲班機尚未確定。札幌下午優先辦入住與市區採買，晚上留給大通公園聖誕市集及成吉思汗。</div></div>
+            <div class="day-summary"><div><b>交通</b>日本國內線</div><div><b>購物</b>札幌站</div><div><b>晚餐</b>成吉思汗</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">上午</div><div class="timeline-card"><div class="timeline-title"><strong>東京 → 新千歲機場</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag flight">✈️ 航班</span></div>
+          <p>實際機場可能是羽田或成田，請以機票為準；提早到機場託運行李。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">中午</div><div class="timeline-card"><div class="timeline-title"><strong>JR 快速 Airport → 札幌市區</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>先寄放行李，札幌站或大通附近入住最順。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">下午</div><div class="timeline-card"><div class="timeline-title"><strong>札幌站購物補貨</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p><strong>MUJI、UNIQLO、Pokémon Center SAPPORO、SHIRO</strong> 視所在百貨與開店時間順路逛；另可吃雪印 Snow Royal 冰淇淋。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">傍晚</div><div class="timeline-card"><div class="timeline-title"><strong>大通公園聖誕市集・白色燈樹節</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>享受北海道冬夜、攤位熱飲與聖誕燈飾；活動項目以官方 2026 年公告為準。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">晚餐</div><div class="timeline-card"><div class="timeline-title"><strong>達摩 成吉思汗烤羊肉</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>炭火鐵鍋烤羊肉，熱門時段可能需排隊；不想等可選附近其他羊肉店，晚餐不硬綁時間。</p></div></li></ol>
+          </div>
+          
+          <!-- day 5: updated 2026-10-23 -->
+          <div class="tab-panel" id="day5" role="tabpanel" aria-labelledby="tab5">
+            <div class="day-header">
+              <h3>Day 5｜12/21（一）小樽｜帝王蟹、吉伊卡哇、運河藍調、天狗山</h3>
+              <div class="day-note">
+                <strong>行程原則：</strong>早上先吃帝王蟹與買小樽限定商品，中午集中逛堺町通，<strong>15:40–16:50 留給運河藍調攝影</strong>，最後才上天狗山看夜景。
+              </div>
+            </div>
+            <div class="photo-window" aria-label="小樽運河藍調攝影黃金時段">
+              <h4>📷 小樽運河藍調攝影｜必須保留的時間</h4>
+              <p>2026/12/21 小樽日落約 <strong>16:05（日本時間）</strong>。「青之運河」官方點燈為日落至 22:30；這次要拍的是<strong>日落後天空還呈藍色，並與運河藍燈交織的畫面</strong>。</p>
+              <div class="photo-bands">
+                <div class="photo-band"><strong>15:40–16:05</strong>找位置、拍日落前街景</div>
+                <div class="photo-band"><strong>16:05–16:35</strong>藍調優先！觀察天空與倒影</div>
+                <div class="photo-band"><strong>16:35–16:50</strong>深藍夜景、收尾再移動</div>
+              </div>
+              <ul class="hint-list">
+                <li>優先拍攝點：<strong>淺草橋街園觀景角度</strong>，再視人潮往中央橋方向慢慢移動。</li>
+                <li>若下雪／陰天，藍調時間與可見度都可能不同；行程不宜訂死分秒。</li>
+                <li>天狗山安排在藍調攝影後，不強求同一天再拍天狗山的夕陽。</li>
+              </ul>
+            </div>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">07:40</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>札幌 → 小樽</strong></div>
+                  <div class="transport-tags"><span class="tag train">🚆 JR／列車</span></div>
+                  <p>以 08:30 左右抵達小樽站為目標，早上優先去三角市場；實際車次於出發前再確認。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">08:30</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>三角市場吃帝王蟹</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>先問 <strong>タラバガニ（帝王蟹）</strong>的重量、單價及烹調費，確認是否可以現場代煮、共享食用；價錢和存貨以當天為準。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">09:40</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>前往堺町通／吉伊卡哇店</strong></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span><span class="tag bus">🚌 公車／計程車</span></div>
+                  <p>從市場出發，雪地步行預留 25～30 分鐘；天氣差或買了太多東西可搭計程車。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">10:05</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>吉伊卡哇 MOGUMOGU 小樽店</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>位於<strong>堺町 6-1</strong>，先買北海道／小樽限定周邊，早去比較不容易受售完影響。官方一般營業 09:30–17:30，入店規則依公告。</p><div class="source-links"><a href="https://www.chiikawamogumogu.jp/stores/otaru/" target="_blank" rel="noopener noreferrer">官方商店資訊 ↗</a></div>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">11:00</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>六花亭小樽運河店</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>品嚐六花亭甜點，採買奶油夾心餅乾等伴手禮。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">11:30</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>北菓樓／堺町通散策</strong></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>加吃人氣泡芙，順逛玻璃工藝、音樂盒商店。避免買太多甜點，後面還有 LeTAO。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">12:05</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>LeTAO 本店下午茶</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>推薦招牌 <strong>Double Fromage</strong> 雙層起司蛋糕；用餐若候位超過預期就改外帶，別壓縮運河拍攝時間。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">13:15</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>蒲榮 かま栄 工場直賣店</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>到<strong>堺町 3-7</strong>吃現炸魚板；可試 Pan Roll，也留意工場店限定的 Pan Dome。冬季通常營業至 18:00。</p><div class="source-links"><a href="https://kamaei.co.jp/store_introduce/chokubai/" target="_blank" rel="noopener noreferrer">工場店官方網站 ↗</a></div>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">14:00</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>小樽運河白天散步</strong></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>慢慢走到運河，拍倉庫群、石造運河、瓦斯燈和積雪；也留空檔喝熱飲、休息暖身。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">15:40–16:50</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>小樽運河「青之運河」藍調攝影</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p><strong>這段是整天最優先保護的時間。</strong> 建議 15:40 前在淺草橋附近找好位置，16:05 左右日落，拍天空從淡藍轉深藍、藍色燈飾亮起的過程。天色會受雲層和降雪影響。</p><div class="source-links"><a href="https://otaru.gr.jp/citizen/winter-bluecanal-2026" target="_blank" rel="noopener noreferrer">青之運河官方活動 ↗</a></div>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">16:50–17:30</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>小樽運河 → 天狗山纜車站</strong></div>
+                  <div class="transport-tags"><span class="tag bus">🚌 公車／計程車</span></div>
+                  <p><strong>優先搭計程車</strong>，估算車程約 15～25 分鐘再加候車與纜車購票；遇大雪要預留額外時間。公車為備案，請確認冬季班表。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">17:30–18:40</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>天狗山夜景與雪景</strong><span class="must-go">必去</span></div>
+                  <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+                  <p>運河拍完再上山，這時已是完整夜景。2026 冬季纜車最後上山 19:48、最後下山 20:00；需留意風雪停駛。</p><div class="source-links"><a href="https://tenguyama.ckk.chuo-bus.co.jp/hours-and-fees/" target="_blank" rel="noopener noreferrer">天狗山纜車官方營業資訊 ↗</a></div>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-time">18:40 後</div>
+                <div class="timeline-card">
+                  <div class="timeline-title"><strong>回小樽站 → 札幌</strong></div>
+                  <div class="transport-tags"><span class="tag bus">🚌 公車／計程車</span><span class="tag train">🚆 JR／列車</span></div>
+                  <p>看雪況選擇公車或計程車下山，搭 JR 回札幌。晚餐不綁指定店家，以當天體力調整。</p>
+                </div>
+              </li>
+            </ol>
+            <div class="day-note" style="margin-top:14px;background:var(--green);">
+              <strong>🎯 拍照優先級：</strong>小樽運河藍調 ＞ 天狗山夜景 ＞ 午後自由逛街。若商店排隊太久，先縮短甜點或購物時間，<strong>不要壓縮 15:40–16:50</strong>。若天狗山因天候停駛，就留在運河附近欣賞夜景，再回札幌。
+            </div>
+          </div>
+
+<!-- day 6 v3 -->
+          <div class="tab-panel" id="day6" role="tabpanel" aria-labelledby="tab6">
+            <div class="day-header"><h3>Day 6｜12/22（二） 旭山動物園・白鬚瀑布・美瑛青池點燈</h3><div class="day-note"><strong>優先找能一路玩到青池 16:30 後點燈的一日團或包車</strong>。普通旭川團常在下午先離開青池，無法兼顧夜間燈飾；實際出發／回程視團體安排。</div></div>
+            <div class="day-summary"><div><b>交通</b>包車／專團</div><div><b>景點</b>旭山動物園</div><div><b>攝影</b>青池夜間點燈</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">07:30 左右</div><div class="timeline-card"><div class="timeline-title"><strong>札幌出發 → 旭川</strong><span class="status booking">需訂位／預約</span></div>
+          <div class="transport-tags"><span class="tag bus">🚌 一日團／車輛</span></div>
+          <p>以當天團體集合資訊為準，請確認是否有足夠雪地行車時間。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">10:30–12:30</div><div class="timeline-card"><div class="timeline-title"><strong>旭山動物園</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>冬季動物園通常 10:30 開園；企鵝散步視積雪及動物狀況，<strong>不能保證 12/22 有舉行</strong>。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">下午</div><div class="timeline-card"><div class="timeline-title"><strong>美瑛沿途雪景・白鬚瀑布</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag bus">🚌 一日團／車輛</span></div>
+          <p>可視路況停留拍照、簡單用餐；若要接青池點燈，不建議再加入太多遠程景點。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">16:30 後</div><div class="timeline-card"><div class="timeline-title"><strong>白金青池冬季夜間點燈</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>重點拍青池雪景與夜燈；需先確認 2026 年活動細節、下車點及候車時間。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">晚上</div><div class="timeline-card"><div class="timeline-title"><strong>返回札幌・休息</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag bus">🚌 一日團／車輛</span></div>
+          <p>車程長且冬季路況多變，晚餐建議簡單吃，不再安排需預訂的餐廳。</p></div></li></ol>
+          </div>
+          
+<!-- day 7 v3 -->
+          <div class="tab-panel" id="day7" role="tabpanel" aria-labelledby="tab7">
+            <div class="day-header"><h3>Day 7｜12/23（三） 北海道神宮・限定梅酒・佐藤聖代・採買</h3><div class="day-note"><strong>北海道神宮先找限定「神宮の梅」梅酒（授與所，可能缺貨），並將「佐藤」安排下午 15:00</strong>，平日下午可能比宵夜時段容易排。超市通常比藥妝早關門，晚上一定要先買草莓，再回飯店整理。</div></div>
+            <div class="day-summary"><div><b>神宮</b>參拜＋限定梅酒</div><div><b>甜點</b>下午佐藤聖代</div><div><b>採買</b>藥妝＋超市</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">10:00–10:40</div><div class="timeline-card"><div class="timeline-title"><strong>大丸札幌 SNOW CHEESE</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>熱門伴手禮先買；如需冷藏注意保存與跨國運輸限制。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">11:00–12:30</div><div class="timeline-card"><div class="timeline-title"><strong>北海道神宮參拜・「神宮の梅」限定梅酒・六花亭判官餅</strong><span class="status ">採買重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 地鐵＋雪地步行</span><span class="tag walk">🛍️ 神宮授與所</span></div>
+          <p><strong>先到神宮授與所詢問「神宮の梅（梅酒）」</strong>，再參拜、到六花亭神宮茶屋吃判官餅。官方標示梅酒初穗料 <strong>¥1,000</strong>、通常 09:00 起授與；使用神宮境內的梅子、特殊瓶形，<strong>不是在茶屋販售</strong>。</p>
+          <div class="note-warn" style="margin-top:10px"><strong>庫存提醒：</strong>截至 2026/10/23，神宮官方社群曾公告梅酒暫停授與（完售）；12/23 是否恢復不確定。出發前請查 <a href="https://x.com/hokkaido_jingu" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">北海道神宮官方社群 ↗</a>。買到後記得保護玻璃瓶並確認託運規定。</div>
+          <div class="venue-links" style="margin-top:10px"><a href="https://www.hokkaidojingu.or.jp/charm_d3.html" target="_blank" rel="noopener noreferrer">官方梅酒資訊 ↗</a></div>
+          </div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">13:00–14:30</div><div class="timeline-card"><div class="timeline-title"><strong>GARAKU 湯咖哩｜北海道蔬菜</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>可選雞腿＋蔬菜或蔬菜款，吃馬鈴薯、南瓜與其他冬季料理；排隊太久就換附近湯咖哩店。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">15:00–16:00</div><div class="timeline-card"><div class="timeline-title"><strong>佐藤本店｜鹽焦糖開心果聖代</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p><strong>白天下午時段</strong>優先；若本店人多，可改大丸札幌店，兩店擇一即可。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">16:00–17:30</div><div class="timeline-card"><div class="timeline-title"><strong>札幌 PARCO｜吉伊卡哇＋鞋店</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>Chiikawa Land、Onitsuka Tiger 等；<strong>mont-bell</strong>可視時間轉往附近分店，若時間不夠就優先角色商品。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">17:30–19:00</div><div class="timeline-card"><div class="timeline-title"><strong>狸小路藥妝：サツドラ＋松本清</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>一次比價集中購買防曬、保養、藥品、生活用品；同款看總容量及單價。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">19:00–20:00</div><div class="timeline-card"><div class="timeline-title"><strong>COCONO SUSUKINO B2F 超市買水果</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p><strong>ダイイチ</strong>挑草莓、余市蘋果、蜜柑、北海道牛奶、優格、零食；留意生鮮產地與 21:00 前結帳。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">晚上</div><div class="timeline-card"><div class="timeline-title"><strong>晚餐彈性・整理行李</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>想再吃根室花丸壽司可視當晚叫號與體力，或改簡單晚餐；超市生鮮留在日本食用。</p></div></li></ol>
+          </div>
+          
+<!-- day 8 v3 -->
+          <div class="tab-panel" id="day8" role="tabpanel" aria-labelledby="tab8">
+            <div class="day-header"><h3>Day 8｜12/24（四） 新千歲機場｜SNOWS・機場限定周邊・回台</h3><div class="day-note">國際線回程航班尚未確認。國內線航廈安檢前有 SNOWS、Pokémon Store、MUJI to GO 等候選；<strong>不可為了購物壓縮退稅、託運與出境時間</strong>。</div></div>
+            <div class="day-summary"><div><b>交通</b>札幌→新千歲</div><div><b>購物</b>SNOWS／寶可夢</div><div><b>提醒</b>退稅與託運</div></div>
+            <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">依班機</div><div class="timeline-card"><div class="timeline-title"><strong>飯店退房 → JR 前往新千歲</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
+          <p>依班機時間抓車程及冬季可能延誤緩衝，確認是否有額外行李。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">有時間時</div><div class="timeline-card"><div class="timeline-title"><strong>SNOWS＋北海道伴手禮</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>以國內線航廈安檢前商店為主；供應數量與開店時間以當天為準。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">選去</div><div class="timeline-card"><div class="timeline-title"><strong>Pokémon Store＋MUJI to GO</strong><span class="status optional">選去</span></div>
+          <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
+          <p>尋找機場限定皮卡丘、補買無印旅行用品；位在國內線航廈，須再走回國際線報到。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">起飛前</div><div class="timeline-card"><div class="timeline-title"><strong>國際線報到、出境與退稅手續</strong><span class="status ">重點</span></div>
+          <div class="transport-tags"><span class="tag flight">✈️ 航班</span></div>
+          <p>適用 2026/11 新的日本退稅流程：先含稅結帳，出境完成規定的海關確認後再辦退稅；確認官方流程並預留時間。</p></div></li></ol>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+<section id="shopping"><div class="container"><div class="section-card">
+      <h2>🛍️ 這趟想逛的店｜可勾選購物清單</h2>
+      <p class="sub">東京集中潮牌、球鞋和角色限定；札幌買機能衣、藥妝、超市水果；新千歲機場最後補買。勾選狀態會盡可能保存在同一瀏覽器。</p>
+      <div class="progress-wrap"><strong>已逛店家 <span id="shop-progress-text">0 / 36</span></strong><div class="progress-track"><div class="progress-fill" id="shop-progress-fill"></div></div></div>
+      <div class="filters" role="group" aria-label="購物地區篩選">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" class="filter-btn" data-filter="tokyo" aria-pressed="false">東京</button>
+        <button type="button" class="filter-btn" data-filter="hokkaido" aria-pressed="false">北海道</button>
+        <button type="button" class="filter-btn" data-filter="airport" aria-pressed="false">機場</button>
+      </div>
+      <div class="shop-list" id="shop-list"><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop1" aria-label="已逛 Chiikawa Land 原宿"/>
+          <span><span class="shop-title">Chiikawa Land 原宿</span><span class="shop-small" style="display:block">東京｜12/18<br>吉伊卡哇周邊，先買喜歡的新品</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop2" aria-label="已逛 吉伊卡哇麵包店"/>
+          <span><span class="shop-title">吉伊卡哇麵包店</span><span class="shop-small" style="display:block">東京｜12/18<br>看入店方式與是否營業，不要影響晚上</span><span class="shop-badge">選去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop3" aria-label="已逛 ASICS"/>
+          <span><span class="shop-title">ASICS</span><span class="shop-small" style="display:block">東京｜12/18<br>試跑鞋與日本限定色</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop4" aria-label="已逛 Onitsuka Tiger"/>
+          <span><span class="shop-title">Onitsuka Tiger</span><span class="shop-small" style="display:block">東京｜12/18<br>MEXICO 66 等日本價格比較</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop5" aria-label="已逛 On Running"/>
+          <span><span class="shop-title">On Running</span><span class="shop-small" style="display:block">東京｜12/18<br>試穿為主，同型號比價</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop6" aria-label="已逛 Hermès"/>
+          <span><span class="shop-title">Hermès</span><span class="shop-small" style="display:block">東京｜12/18<br>表參道皮件精品店</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop7" aria-label="已逛 LE LABO"/>
+          <span><span class="shop-title">LE LABO</span><span class="shop-small" style="display:block">東京｜12/18<br>青山或澀谷 PARCO 選一家</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop8" aria-label="已逛 Blue Bottle 藍瓶咖啡"/>
+          <span><span class="shop-title">Blue Bottle 藍瓶咖啡</span><span class="shop-small" style="display:block">東京｜12/18<br>青山喝咖啡休息</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop9" aria-label="已逛 HUMAN MADE"/>
+          <span><span class="shop-title">HUMAN MADE</span><span class="shop-small" style="display:block">東京｜12/18<br>澀谷 PARCO 順路看限定品</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop10" aria-label="已逛 A.P.C."/>
+          <span><span class="shop-title">A.P.C.</span><span class="shop-small" style="display:block">東京｜12/18<br>澀谷 PARCO 順路</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop11" aria-label="已逛 Nintendo TOKYO｜皮克敏"/>
+          <span><span class="shop-title">Nintendo TOKYO｜皮克敏</span><span class="shop-small" style="display:block">東京｜12/18<br>澀谷 PARCO 6F</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop12" aria-label="已逛 Pokémon Center SHIBUYA"/>
+          <span><span class="shop-title">Pokémon Center SHIBUYA</span><span class="shop-small" style="display:block">東京｜12/18<br>澀谷 PARCO 6F，和任天堂同層</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop13" aria-label="已逛 Apple"/>
+          <span><span class="shop-title">Apple</span><span class="shop-small" style="display:block">東京｜12/18<br>表參道路過再看</span><span class="shop-badge">選去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop14" aria-label="已逛 UNIQLO"/>
+          <span><span class="shop-title">UNIQLO</span><span class="shop-small" style="display:block">東京｜12/18<br>東京忙時挪到札幌</span><span class="shop-badge">候補</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop15" aria-label="已逛 Chiikawa Park"/>
+          <span><span class="shop-title">Chiikawa Park</span><span class="shop-small" style="display:block">東京｜12/19<br>優先確認門票入園時段</span><span class="shop-badge">需預約</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop16" aria-label="已逛 Pokémon Center MEGA TOKYO"/>
+          <span><span class="shop-title">Pokémon Center MEGA TOKYO</span><span class="shop-small" style="display:block">東京｜12/19<br>Sunshine City alpa 2F</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop17" aria-label="已逛 Pikachu Sweets"/>
+          <span><span class="shop-title">Pikachu Sweets</span><span class="shop-small" style="display:block">東京｜12/19<br>Sunshine City 寶可夢甜點</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop18" aria-label="已逛 Chiikawa Land 池袋"/>
+          <span><span class="shop-title">Chiikawa Land 池袋</span><span class="shop-small" style="display:block">東京｜12/19<br>池袋 PARCO 補買</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop19" aria-label="已逛 吉伊卡哇餐廳／拉麵豚"/>
+          <span><span class="shop-title">吉伊卡哇餐廳／拉麵豚</span><span class="shop-small" style="display:block">東京｜12/19<br>與今半午餐三擇一，確認預約</span><span class="shop-badge">選去</span></span></label><label class="shop-entry" data-area="tokyo"><input type="checkbox" class="shop-check" id="shop20" aria-label="已逛 Pokémon Café 日本橋"/>
+          <span><span class="shop-title">Pokémon Café 日本橋</span><span class="shop-small" style="display:block">東京｜12/17<br>需訂位，抵達夠早才去</span><span class="shop-badge">選去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop21" aria-label="已逛 無印良品 MUJI"/>
+          <span><span class="shop-title">無印良品 MUJI</span><span class="shop-small" style="display:block">札幌｜12/20 或 12/23<br>札幌百貨與商場補貨</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop22" aria-label="已逛 Pokémon Center SAPPORO"/>
+          <span><span class="shop-title">Pokémon Center SAPPORO</span><span class="shop-small" style="display:block">札幌｜12/20<br>札幌大丸補買角色商品</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop23" aria-label="已逛 SHIRO 香氛"/>
+          <span><span class="shop-title">SHIRO 香氛</span><span class="shop-small" style="display:block">札幌｜12/20<br>札幌站附近順路試香</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop24" aria-label="已逛 UNIQLO"/>
+          <span><span class="shop-title">UNIQLO</span><span class="shop-small" style="display:block">札幌｜12/20 或 12/23<br>HEATTECH、冬衣基本款</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop25" aria-label="已逛 吉伊卡哇 MOGUMOGU 小樽"/>
+          <span><span class="shop-title">吉伊卡哇 MOGUMOGU 小樽</span><span class="shop-small" style="display:block">札幌｜12/21<br>小樽限定商品最重要</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop26" aria-label="已逛 Chiikawa Land 札幌"/>
+          <span><span class="shop-title">Chiikawa Land 札幌</span><span class="shop-small" style="display:block">札幌｜12/23<br>札幌 PARCO 補貨</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop27" aria-label="已逛 Onitsuka Tiger 札幌"/>
+          <span><span class="shop-title">Onitsuka Tiger 札幌</span><span class="shop-small" style="display:block">札幌｜12/23<br>札幌 PARCO，東京漏買可補</span><span class="shop-badge">候補</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop28" aria-label="已逛 mont-bell"/>
+          <span><span class="shop-title">mont-bell</span><span class="shop-small" style="display:block">札幌｜12/23<br>羽絨、保暖中層和防水裝備</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop36" aria-label="已採買 北海道神宮限定 神宮の梅 梅酒"/>
+          <span><span class="shop-title">北海道神宮｜「神宮の梅」限定梅酒</span><span class="shop-small" style="display:block">札幌｜12/23 上午<br>神宮授與所（非六花亭茶屋）；¥1,000，庫存需事前確認</span><span class="shop-badge">找限定／可能缺貨</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop29" aria-label="已逛 SNOW CHEESE"/>
+          <span><span class="shop-title">SNOW CHEESE</span><span class="shop-small" style="display:block">札幌｜12/23<br>大丸札幌優先買</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop30" aria-label="已逛 サツドラ 狸小路"/>
+          <span><span class="shop-title">サツドラ 狸小路</span><span class="shop-small" style="display:block">札幌｜12/23<br>北海道本地藥妝鏈</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop31" aria-label="已逛 松本清 狸小路"/>
+          <span><span class="shop-title">松本清 狸小路</span><span class="shop-small" style="display:block">札幌｜12/23<br>與サツドラ比較單價</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="hokkaido"><input type="checkbox" class="shop-check" id="shop32" aria-label="已逛 ダイイチ COCONO SUSUKINO"/>
+          <span><span class="shop-title">ダイイチ COCONO SUSUKINO</span><span class="shop-small" style="display:block">札幌｜12/23<br>草莓、蘋果、鮮乳、優格</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="airport"><input type="checkbox" class="shop-check" id="shop33" aria-label="已逛 SNOWS"/>
+          <span><span class="shop-title">SNOWS</span><span class="shop-small" style="display:block">機場｜12/24<br>新千歲國內線航廈安檢前為主</span><span class="shop-badge">必去</span></span></label><label class="shop-entry" data-area="airport"><input type="checkbox" class="shop-check" id="shop34" aria-label="已逛 Pokémon Store 新千歲"/>
+          <span><span class="shop-title">Pokémon Store 新千歲</span><span class="shop-small" style="display:block">機場｜12/24<br>飛行員皮卡丘等機場商品</span><span class="shop-badge">想逛</span></span></label><label class="shop-entry" data-area="airport"><input type="checkbox" class="shop-check" id="shop35" aria-label="已逛 MUJI to GO"/>
+          <span><span class="shop-title">MUJI to GO</span><span class="shop-small" style="display:block">機場｜12/24<br>旅用品最後補買</span><span class="shop-badge">想逛</span></span></label></div>
+      <div class="plan-note" style="margin-top:18px"><p><strong>購物預算筆記：</strong>日本較值得先比價的有 mont-bell、Onitsuka Tiger、UNIQLO／GU、MUJI、ASICS、PORTER；Hermès、Apple、On、LE LABO 不一定全面比台灣便宜。同品號、含稅價與退稅後價應分開比。</p></div>
+      </div></div></section>
+<section id="dining"><div class="container"><div class="section-card"><h2>🍜 美食筆記｜必吃、候選、訂位</h2>
+      <p class="sub">每間標明建議日期。燒肉 ¥10,000～20,000／人，以肉質與料理水準為優先；價格只是規劃參考，非已訂位或保證不變。</p>
+      <div class="tip-strip"><div class="mini-card"><strong>東京燒肉</strong><p>YORONIKU 最優先；訂不到改 Ushigoro。兩家不必都吃。</p></div><div class="mini-card"><strong>東京壽喜燒</strong><p>今半池袋 vs 吉伊卡哇餐廳，12/19 中午二選一。</p></div><div class="mini-card"><strong>北海道甜點</strong><p>12/21 小樽吃六花亭、LeTAO；12/23 下午佐藤聖代。</p></div></div>
+      <h3 class="subheading">東京｜燒肉・壽喜燒・入鹿</h3><div class="venue-grid"><article class="venue-card"><div class="venue-top"><span class="pill pink">優先</span><span class="venue-meta">12/18 晚餐候選</span></div><h3>蕃 YORONIKU｜惠比壽</h3><p class="venue-meta">東京・惠比壽</p><div class="price">約 ¥16,390／人</div><p>肉質與料理層次第一順位；需預約合適晚間時段，不保證一定有 21:30 後的座位。</p><p class="venue-meta"><strong>推薦：</strong>參考 ¥14,900 松露壽喜燒套餐＋10% 服務費；厚切牛舌、夏多布里昂、絲綢里肌等，實際菜單依店家。</p><div class="venue-links"><a href="https://www.tablecheck.com/ja/shops/ebisu-yoroniku/reserve" target="_blank" rel="noopener noreferrer">查看官方訂位 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">候選</span><span class="venue-meta">12/19 午餐二選一</span></div><h3>人形町今半｜池袋東武</h3><p class="venue-meta">東京・池袋</p><div class="price">約 ¥14,045～18,603／人</div><p>傳統和牛壽喜燒桌邊服務。排這餐就取消吉伊卡哇餐廳／拉麵午餐，避免吃太多。</p><p class="venue-meta"><strong>推薦：</strong>參考豊泉特上 ¥12,540 或牛肉三昧特上 ¥16,610，另計服務費；實價依官網。</p><div class="venue-links"><a href="https://restaurant.imahan.com/ikebukuro-tobu/" target="_blank" rel="noopener noreferrer">查看官方訂位 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">備案</span><span class="venue-meta">12/18 燒肉備案</span></div><h3>Ushigoro 表參道</h3><p class="venue-meta">東京・表參道</p><div class="price">約 ¥13,020～16,590／人</div><p>若 YORONIKU 訂不到就選這間，但須提前結束部分購物。</p><p class="venue-meta"><strong>推薦：</strong>參考極み套餐 ¥12,400／季節の匠 ¥15,800，另計服務費。</p><div class="venue-links"><a href="https://www.tablecheck.com/ja/shops/ushigoro-omotesando/reserve" target="_blank" rel="noopener noreferrer">查看官方訂位 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">備案</span><span class="venue-meta">12/18 順路備案</span></div><h3>KINTAN 澀谷 PARCO</h3><p class="venue-meta">東京・澀谷</p><div class="price">約 ¥6,000～10,000／人</div><p>燒肉備案：澀谷 PARCO 同棟，地點最便利，但若重視肉質優先前面兩家。</p><p class="venue-meta"><strong>推薦：</strong>熟成牛舌、和牛；參考套餐約 ¥9,800，依店家菜單。</p><div class="venue-links"><a href="https://www.tablecheck.com/shops/kintan-shibuya-yakiniku/reserve" target="_blank" rel="noopener noreferrer">查看官方訂位 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/19 傍晚</span></div><h3>入鹿 TOKYO</h3><p class="venue-meta">東京・六本木</p><div class="price">約 ¥1,500～2,500／人</div><p>你指定的必吃拉麵；排在池袋後與六本木燈飾前。可能提早售完或排隊。</p><p class="venue-meta"><strong>推薦：</strong>特製松露牛肝菌醬油拉麵。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%A5%E9%B9%BF%20TOKYO%20%E6%9D%B1%E4%BA%AC%E3%83%BB%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">甜點</span><span class="venue-meta">12/18 下午</span></div><h3>GARIGUETTE</h3><p class="venue-meta">東京・表參道</p><div class="price">單點依菜單</div><p>草莓卡士達拿破崙千層酥；與藍瓶咖啡擇時間停留。</p><p class="venue-meta"><strong>推薦：</strong>草莓卡士達千層酥。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=GARIGUETTE%20%E6%9D%B1%E4%BA%AC%E3%83%BB%E8%A1%A8%E5%8F%83%E9%81%93" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">選去</span><span class="venue-meta">12/18 選去</span></div><h3>I’m donut? 原宿</h3><p class="venue-meta">東京・原宿</p><div class="price">單點依菜單</div><p>人氣日式生甜甜圈，購物太忙可略過。</p><p class="venue-meta"><strong>推薦：</strong>原味或當季口味。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=I%E2%80%99m%20donut%3F%20%E5%8E%9F%E5%AE%BF%20%E6%9D%B1%E4%BA%AC%E3%83%BB%E5%8E%9F%E5%AE%BF" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">需預約</span><span class="venue-meta">12/19 午餐候選</span></div><h3>Chiikawa 餐廳／拉麵豚</h3><p class="venue-meta">東京・池袋</p><div class="price">依官方菜單</div><p>需要預約或入店規則；與今半壽喜燒二選一。</p><p class="venue-meta"><strong>推薦：</strong>角色主題套餐／拉麵。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Chiikawa%20%E9%A4%90%E5%BB%B3%EF%BC%8F%E6%8B%89%E9%BA%B5%E8%B1%9A%20%E6%9D%B1%E4%BA%AC%E3%83%BB%E6%B1%A0%E8%A2%8B" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article></div><h3 class="subheading">北海道｜海鮮・湯咖哩・聖代</h3><div class="venue-grid"><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/20 晚餐</span></div><h3>達摩 成吉思汗</h3><p class="venue-meta">北海道・札幌</p><div class="price">依現場菜單</div><p>北海道經典鐵鍋烤羊肉，人氣時段候位；若班機晚到可改別家。</p><p class="venue-meta"><strong>推薦：</strong>烤羊肉、洋蔥、當日部位。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%81%94%E6%91%A9%20%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/21 早餐</span></div><h3>三角市場｜帝王蟹</h3><p class="venue-meta">北海道・小樽</p><div class="price">秤重計價</div><p>一早先吃タラバガニ，先問重量、料理費與可否現場代煮。</p><p class="venue-meta"><strong>推薦：</strong>帝王蟹／海鮮。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%89%E8%A7%92%E5%B8%82%E5%A0%B4%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/21 中午</span></div><h3>六花亭・北菓樓・LeTAO・蒲榮</h3><p class="venue-meta">北海道・小樽</p><div class="price">依店內價格</div><p>同一條堺町通串起甜點、泡芙、起司蛋糕和現炸魚板，保留 15:40 藍調攝影。</p><p class="venue-meta"><strong>推薦：</strong>奶油夾心、泡芙、Double Fromage、Pan Roll。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%AD%E8%8A%B1%E4%BA%AD%E3%83%BB%E5%8C%97%E8%8F%93%E6%A8%93%E3%83%BBLeTAO%E3%83%BB%E8%92%B2%E6%A6%AE%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E5%B0%8F%E6%A8%BD" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/23 13:00</span></div><h3>GARAKU 湯咖哩</h3><p class="venue-meta">北海道・札幌</p><div class="price">依店內價格</div><p>蔬菜版最適合你想吃北海道冬季農產的需求。</p><p class="venue-meta"><strong>推薦：</strong>雞腿＋蔬菜／蔬菜湯咖哩。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=GARAKU%20%E6%B9%AF%E5%92%96%E5%93%A9%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">必吃</span><span class="venue-meta">12/23 15:00</span></div><h3>パフェ、珈琲、酒、佐藤</h3><p class="venue-meta">北海道・札幌</p><div class="price">依店內價格</div><p>下午通常比宵夜尖峰更友善；本店若候位久改大丸店。</p><p class="venue-meta"><strong>推薦：</strong>鹽焦糖開心果聖代。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%91%E3%83%95%E3%82%A7%E3%80%81%E7%8F%88%E7%90%B2%E3%80%81%E9%85%92%E3%80%81%E4%BD%90%E8%97%A4%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">候補</span><span class="venue-meta">12/20 或 12/23 選去</span></div><h3>根室花丸｜札幌站</h3><p class="venue-meta">北海道・札幌</p><div class="price">依盤價</div><p>北海道迴轉壽司；需要現場取號，晚間不強制塞入。</p><p class="venue-meta"><strong>推薦：</strong>干貝、鮭魚卵、花咲蟹等。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A0%B9%E5%AE%A4%E8%8A%B1%E4%B8%B8%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article><article class="venue-card"><div class="venue-top"><span class="pill pink">甜點</span><span class="venue-meta">12/20 選去</span></div><h3>雪印パーラー</h3><p class="venue-meta">北海道・札幌</p><div class="price">依店內價格</div><p>北海道奶香甜點、Snow Royal 冰淇淋，逛札幌站時順路吃。</p><p class="venue-meta"><strong>推薦：</strong>Snow Royal／水果聖代。</p><div class="venue-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9B%AA%E5%8D%B0%E3%83%91%E3%83%BC%E3%83%A9%E3%83%BC%20%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9C%AD%E5%B9%8C" target="_blank" rel="noopener noreferrer">地圖搜尋 ↗</a></div></article></div>
+      <p class="fine-print" style="margin-top:16px">提醒：入鹿、熱門拉麵、燒肉及壽喜燒可能因臨時公休、售完、訂位限制變更；所有營業時間、價格及門票請於出發前以官方當期公告確認。</p>
+    </div></div></section>
+    <section id="todo">
+      <div class="container">
+        <div class="columns">
+          <div class="section-card">
+            <h2>✅ 可打勾待辦清單</h2>
+            <ul class="todo-list">
+              <li class="todo-item"><input type="checkbox" id="todo1"><label for="todo1">確認三段航班與機場：12/17、12/20、12/24</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo2"><label for="todo2">確認東京 3 晚＋札幌 4 晚飯店與行李寄放</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo3"><label for="todo3">預約 12/19 Chiikawa Park；核對餐廳／拉麵豚資格</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo4"><label for="todo4">詢問 12/18 YORONIKU 或 Ushigoro 晚餐可訂時段</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo5"><label for="todo5">決定 12/19 午餐：今半壽喜燒 或 吉伊卡哇主題餐</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo6"><label for="todo6">訂 12/22 旭川美瑛夜間青池點燈包車／適合一日團</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo7"><label for="todo7">核對 12/21 小樽運河藍調＋天狗山冬季交通與天氣備案</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo8"><label for="todo8">準備雪地防滑用品、eSIM、保險、護照、退稅資訊</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo9"><label for="todo9">確認 Nintendo／Pokémon 兩間東京店、札幌藥妝和超市購物清單</label></li>
+              <li class="todo-item"><input type="checkbox" id="todo10"><label for="todo10">12/23 北海道神宮「神宮の梅」梅酒庫存、玻璃瓶託運與免稅限額</label></li>
+            </ul>
+          </div>
+
+          <div class="section-card">
+            <h2>📝 旅遊重點備忘</h2>
+            <div class="mini-card" style="margin-bottom:12px;">
+              <strong style="font-size:1.05rem;">東京購物策略</strong>
+              <p style="margin:8px 0 0;">12/18 確保澀谷 PARCO Nintendo TOKYO 與 Pokémon Center SHIBUYA 兩站都有逛；12/19 Sunshine City 的 MEGA TOKYO 也要去。東京以球鞋、精品、香水與角色周邊優先。</p>
+            </div>
+            <div class="mini-card" style="margin-bottom:12px;">
+              <strong style="font-size:1.05rem;">北海道購物策略</strong>
+              <p style="margin:8px 0 0;">札幌先在北海道神宮授與所找「神宮の梅」限定梅酒（容易缺貨，出發前查庫存）；其餘集中買藥妝、伴手禮與新鮮水果：12/23 17:30–19:00 狸小路藥妝、19:00–20:00 COCONO SUSUKINO B2F ダイイチ超市。SNOW CHEESE 在大丸札幌，SNOWS 以新千歲機場為主。</p>
+            </div>
+            <div class="mini-card">
+              <strong style="font-size:1.05rem;">交通提醒</strong>
+              <p style="margin:8px 0 0;">東京與札幌建議住交通方便地點；札幌連住最省事，小樽與旭川皆以大眾運輸／一日團為優先。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="seasonal-food">
+      <div class="container"><div class="section-card">
+        <h2>🍓 北海道冬季食材與超市攻略</h2>
+        <p class="sub">12 月可以在札幌買到日本草莓，但多為栃木、福岡等其他縣市產；北海道自己出產的草莓不是這個季節的主力。水果買回飯店吃，不帶生鮮返台。</p>
+        <div class="food-grid">
+          <article class="food-card" style="background:#fff2ee"><h3>🍓 草莓｜超市優先</h3><p>找 <strong>とちあいか、あまおう、ゆうべに</strong> 等；品種與價格以現場進貨為準。建議買 1～2 盒在日本吃。</p></article>
+          <article class="food-card" style="background:#f2f8ed"><h3>🍎 余市蘋果＋🍊 蜜柑</h3><p>找北海道 <strong>余市產蘋果</strong>，搭配冬季日本蜜柑。適合旅行期間當水果點心。</p></article>
+          <article class="food-card" style="background:#fff9e9"><h3>🥔 馬鈴薯、🎃 南瓜、百合根</h3><p>北海道冬季特色食材，<strong>湯咖哩、奶油馬鈴薯、茶碗蒸</strong>很適合體驗；生蔬菜不必大量買。</p></article>
+          <article class="food-card" style="background:#edf6fa"><h3>🌽 玉米與🍈 夕張哈密瓜</h3><p>12 月不是新鮮當季。選 <strong>奶油玉米拉麵、玉米濃湯、哈密瓜冰淇淋</strong>，不需要為農場多排一天。</p></article>
+          <article class="food-card"><h3>🥛 北海道鮮乳與乳製品</h3><p>超市可找北海道牛奶、優格、乳酪、布丁、冰淇淋；需要冷藏就買當晚會吃完的份量。</p></article>
+          <article class="food-card"><h3>🛒 12/23 專門採買路線</h3><p><strong>17:30 狸小路 サツドラ／松本清</strong> → <strong>19:00 COCONO SUSUKINO B2F ダイイチ</strong>；先確認營業時間，超市盡量 20:00 前結束。</p></article>
+        </div>
+        <div class="note-warn"><strong>退稅提醒：</strong>依 2026/11 日本新制，符合條件購物須先支付含稅價，出境完成規定海關確認後才能退稅。生鮮水果、蔬菜不能任意帶回台灣；本頁水果規劃為日本當地享用。</div>
+      </div></div>
+    </section>
+
+    <section id="stay">
+      <div class="container">
+        <div class="section-card">
+          <h2>🏠 住宿資訊</h2>
+          <div class="stay-grid">
+            <article class="stay-card">
+              <div class="pill pink">東京 3 晚</div>
+              <div class="place">東京市區住宿（12/17–12/20）</div>
+              <p>
+                建議住在 <strong>品川／上野／交通便利區域</strong>。<br>
+                如果去程到成田、12/20 再飛北海道，住宿以方便拖行李與機場交通為主。
+              </p>
+              <p class="sub">需求：交通方便、可放購物戰利品、前往原宿／池袋方便。</p>
+            </article>
+
+            <article class="stay-card">
+              <div class="pill blue">札幌 4 晚</div>
+              <div class="place">札幌站／大通附近（12/20–12/24）</div>
+              <p>
+                北海道建議 <strong>札幌連住四晚</strong>，最方便往返小樽、旭川與新千歲機場。
+              </p>
+              <p class="sub">需求：靠近 JR 或地鐵、方便採買、方便最後整理行李。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        東京＋北海道冬日旅程網站 ♡｜V3・景點×美食×購物一次整合<br>
+        可再依最終航班、飯店與每日細節繼續微調。
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // 倒數
+    (function(){
+      const target = new Date("2026-12-17T00:00:00+08:00").getTime();
+      const el = document.getElementById("countdownDays");
+      function updateCountdown(){
+        const now = new Date().getTime();
+        const diff = target - now;
+        if(diff <= 0){
+          el.textContent = "出發中！";
+          return;
+        }
+        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        el.textContent = days + " 天";
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000 * 60 * 60);
+    })();
+
+    // 待辦勾選保存在瀏覽器：直接打開這個單一 HTML 檔也可以使用。
+    (function(){
+      const checkboxes = Array.from(document.querySelectorAll('.todo-item input[type="checkbox"]'));
+      const key = 'tokyo-hokkaido-2026-winter-todos';
+      try {
+        const saved = JSON.parse(localStorage.getItem(key) || '{}');
+        checkboxes.forEach(box => {
+          box.checked = !!saved[box.id];
+          box.addEventListener('change', () => {
+            const state = Object.fromEntries(checkboxes.map(el => [el.id, el.checked]));
+            localStorage.setItem(key, JSON.stringify(state));
+          });
+        });
+      } catch (err) { /* 不支援儲存也不影響勾選功能 */ }
+    })();
+
+    // 日期切換
+    (function(){
+      const buttons = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      buttons.forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const target = btn.getAttribute("aria-controls");
+
+          buttons.forEach(b=>{
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          panels.forEach(p=>p.classList.remove("active"));
+
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+          document.getElementById(target).classList.add("active");
+        });
+      });
+    })();
+
+    // 依地區篩選購物清單、保存勾選狀態。
+    (function(){
+      const entries = Array.from(document.querySelectorAll('.shop-entry'));
+      const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+      const storageKey = 'tokyo-hokkaido-2026-shoplist-v3';
+      const boxes = Array.from(document.querySelectorAll('.shop-check'));
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch (error) { saved = {}; }
+      function refresh(){
+        entries.forEach(entry => {
+          const checked = entry.querySelector('input').checked;
+          entry.classList.toggle('is-done', checked);
+        });
+        const done = boxes.filter(box=>box.checked).length;
+        const text = document.getElementById('shop-progress-text');
+        const bar = document.getElementById('shop-progress-fill');
+        if(text) text.textContent = done + ' / ' + boxes.length;
+        if(bar) bar.style.width = (100*done/Math.max(1,boxes.length)) + '%';
+      }
+      boxes.forEach(box => {
+        box.checked = !!saved[box.id];
+        box.addEventListener('change', () => {
+          try { localStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(boxes.map(b=>[b.id,b.checked])))); } catch(error) {}
+          refresh();
+        });
+      });
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          buttons.forEach(b => b.setAttribute('aria-pressed', String(b===btn)));
+          entries.forEach(entry => { entry.hidden = !(filter==='all' || entry.dataset.area===filter); });
+        });
+      });
+      refresh();
+    })();
+  </script>
+</body>
+</html>
