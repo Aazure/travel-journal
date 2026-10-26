@@ -806,6 +806,28 @@
 .brand-store-item:has(.shop-entry[hidden]){display:none}
 @media(max-width:760px){.brand-store-grid{grid-template-columns:1fr}.brand-stores{padding:13px}}
 
+
+/* V16 Google Maps per-day routes */
+#routes{scroll-margin-top:110px}
+.route-tip{border:2px dashed var(--ink);background:var(--green);border-radius:17px;padding:13px;margin:13px 0 17px;font-size:.92rem}
+.route-accordion{display:grid;gap:12px}
+.route-day{border:3px solid var(--ink);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow);scroll-margin-top:115px}
+.route-day summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;padding:13px 15px;font-weight:700}
+.route-day summary::-webkit-details-marker{display:none}
+.route-day:nth-child(even){background:#fffdf7}
+.route-date{padding:4px 7px;border:2px solid var(--ink);border-radius:10px;background:var(--yellow);white-space:nowrap;font-size:.82rem}
+.route-title{flex:1;font-size:.89rem}
+.route-crumb{font-size:.78rem;color:#66605a;white-space:nowrap}
+.route-body{border-top:2px solid var(--ink);padding:14px}
+.route-path{font-size:.9rem;line-height:1.7;margin:0 0 9px}
+.route-note{font-size:.85rem;color:#5d5750;margin:0 0 11px}
+.route-links{display:flex;flex-wrap:wrap;gap:8px}
+.route-map-btn{font-size:.84rem;font-weight:700;background:var(--blue);border:2px solid var(--ink);border-radius:12px;padding:7px 9px}
+.route-map-btn:nth-child(2n){background:var(--green)}
+.route-return{font-size:.86rem;font-weight:700;text-decoration:underline;margin-top:13px}
+.route-quick{display:inline-block;border:2px solid var(--ink);border-radius:11px;padding:6px 10px;background:var(--blue);font-size:.82rem;font-weight:700;margin-bottom:10px;box-shadow:var(--shadow)}
+@media(max-width:760px){.route-day summary{flex-wrap:wrap}.route-title{min-width:56%}.route-map-btn{width:100%;text-align:center}}
+
   </style>
 </head>
 <body>
@@ -819,6 +841,7 @@
         <a href="#home">首頁</a>
         <a href="#flights">航班</a>
         <a href="#itinerary">每日行程</a>
+        <a href="#routes">每日路線圖</a>
         <a href="#meal-plan">三餐總覽</a>
         <a href="#shopping">購物清單</a>
         <a href="#dining">美食筆記</a>
@@ -968,6 +991,7 @@
 
 <!-- day 1 v3 -->
           <div class="tab-panel active" id="day1" role="tabpanel" aria-labelledby="tab1">
+<a class="route-quick" href="#route-day1">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 1｜12/17（四） 東京抵達・丸之內聖誕氣氛</h3><div class="day-note">A 組 2 人預計搭酷航 TR874，<strong>12/17 14:25 桃園出發、18:30 到成田</strong>。東京飯店約 20:30–21:30 才能入住；這晚不硬排丸之內、壽喜燒或寶可夢咖啡廳。航班未出票。B 組 12/19 直飛札幌。</div></div>
             <div class="day-summary"><div><b>城市</b>東京</div><div><b>餐飲</b>晚餐彈性</div><div><b>重點</b>旅途緩衝</div></div>
             <div class="meal-strip" aria-label="12/17（四）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>出發前／機場早餐</strong><p>依台灣出發航班彈性安排</p></article>
@@ -991,6 +1015,7 @@
           
 <!-- day 2 v3 -->
           <div class="tab-panel" id="day2" role="tabpanel" aria-labelledby="tab2">
+<a class="route-quick" href="#route-day2">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 2｜12/18（五） 國立新美術館晨拍・原宿・表參道・澀谷</h3><div class="day-note"><strong>10:00–10:45 先去國立新美術館，只拍公共區域的建築內部；中午前完成，不進展廳、不買展覽票。</strong> 之後走乃木坂站千代田線往明治神宮前，接原宿／表參道，保留必要購物時間。<strong>澀谷 PARCO 的 Nintendo TOKYO＋Pokémon Center SHIBUYA 都要去</strong>，和表參道燈飾並列優先。YORONIKU 是晚餐首選，但要訂到合適時段才安排。<strong>澀谷 LOFT 或 MIYASHITA PARK 只是有時間才選逛</strong>，不壓縮 Pokémon Center 與 Nintendo TOKYO。</div></div>
             <div class="day-summary"><div><b>購物</b>原宿・澀谷</div><div><b>甜點</b>千層酥／咖啡</div><div><b>晚餐</b>高級燒肉候選</div></div>
             <div class="meal-strip" aria-label="12/18（五）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>東京住宿／車站早餐</strong><p>約 08:00–09:00，吃完前往乃木坂站拍建築</p></article>
@@ -1023,6 +1048,7 @@
           
 <!-- day 3 v3 -->
           <div class="tab-panel" id="day3" role="tabpanel" aria-labelledby="tab3">
+<a class="route-quick" href="#route-day3a">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 3｜12/19（六）雙組分流｜東京樂園 × 北海道烤羊肉</h3><div class="day-note"><strong>A 東京組（2 人）</strong>上午逛池袋，<strong>12:20 已訂票的吉伊卡哇樂園</strong>固定不動（12:05 前集合）。<strong>B 北海道組（2 人）</strong>搭 TR892 12:15 桃園 → 17:00 新千歲，當晚先吃札幌成吉思汗。兩組<strong>12/20 才在札幌會合</strong>；航班目前只是預選／未確認出票。</div></div>
             <div class="day-summary"><div><b>A 組｜東京 2 人</b>12:20 吉伊卡哇樂園已訂票</div><div><b>B 組｜札幌 2 人</b>TR892 17:00 抵新千歲</div><div><b>四人相聚</b>12/20 札幌會合</div></div>
             <div class="group-banner"><article class="group-banner-card group-a"><span class="pill pink">A 組｜東京 2 人</span><strong>寶可夢 → 吉伊卡哇樂園 → 入鹿拉麵</strong><p>上午池袋、<strong>12:20 已訂樂園</strong>，12/20 再飛札幌。</p></article><article class="group-banner-card group-b"><span class="pill blue">B 組｜北海道 2 人</span><strong>TR892 飛新千歲 → 札幌飯店 → だるま成吉思汗</strong><p>日本 17:00 落地，札幌飯店約 19:00–20:00 才抵達。</p></article></div>
@@ -1073,6 +1099,7 @@
           
 <!-- day 4 v3 -->
           <div class="tab-panel" id="day4" role="tabpanel" aria-labelledby="tab4">
+<a class="route-quick" href="#route-day4a">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 4｜12/20（日） A 組飛札幌・B 組自由活動・四人會合</h3><div class="day-note"><strong>A 組 2 人</strong>12/20 從羽田搭早班國內線抵札幌；<strong>B 組 2 人</strong>12/19 已入住札幌，上午可以自行吃美食、逛市區。<strong>四人暫定 15:00–16:00 在大丸札幌 1F 會合</strong>（以 A 組國內線實際時間為準），晚餐優先德壽白老牛。B 組前晚已吃達摩，不必連續兩晚吃羊肉。</div></div>
             <div class="day-summary"><div><b>A 組 2 人</b>羽田飛札幌</div><div><b>B 組 2 人</b>札幌站／大通</div><div><b>四人相聚</b>下午大丸・晚上德壽</div></div>
             <div class="meal-strip" aria-label="12/20（日）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>A：羽田機場／B：札幌飯店</strong><p>兩組各自吃早餐、B 組不去機場</p></article>
@@ -1117,6 +1144,7 @@
           
           <!-- day 5: updated 2026-10-23 -->
           <div class="tab-panel" id="day5" role="tabpanel" aria-labelledby="tab5">
+<a class="route-quick" href="#route-day5">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header">
               <h3>Day 5｜12/21（一）小樽｜帝王蟹必吃候選・毛蟹・運河藍調・天狗山</h3>
               <div class="day-note">
@@ -1272,6 +1300,7 @@
 
 <!-- day 6 v3 -->
           <div class="tab-panel" id="day6" role="tabpanel" aria-labelledby="tab6">
+<a class="route-quick" href="#route-day6">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 6｜12/22（二） 旭山動物園・白鬚瀑布・美瑛青池點燈</h3><div class="day-note"><strong>優先找能一路玩到青池 16:30 後點燈的一日團或包車</strong>。普通旭川團常在下午先離開青池，無法兼顧夜間燈飾；實際出發／回程視團體安排。<strong>這天戶外雪地停留較久，鞋子防水防滑、保暖襪、手套與備用行動電源比多塞購物景點重要。</strong></div></div>
             <div class="day-summary"><div><b>交通</b>包車／專團</div><div><b>景點</b>旭山動物園</div><div><b>攝影</b>青池夜間點燈</div></div>
             <div class="meal-strip" aria-label="12/22（二）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>札幌飯店早食／便利店飯糰</strong><p>07:30 出發前，建議提前備好</p></article>
@@ -1298,6 +1327,7 @@
           
 <!-- day 7 v3 -->
           <div class="tab-panel" id="day7" role="tabpanel" aria-labelledby="tab7">
+<a class="route-quick" href="#route-day7a">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 7｜12/23（三） 北海道神宮・限定梅酒・佐藤聖代・採買</h3><div class="day-note"><strong>北海道神宮先找限定「神宮の梅」梅酒（授與所，可能缺貨），並將「佐藤」安排下午 15:00</strong>，平日下午可能比宵夜時段容易排。超市通常比藥妝早關門，晚上一定要先買草莓，再回飯店整理。</div></div>
             <div class="day-summary"><div><b>神宮</b>參拜＋限定梅酒</div><div><b>甜點</b>下午佐藤聖代</div><div><b>採買</b>藥妝＋超市</div></div>
             <div class="meal-strip" aria-label="12/23（三）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>札幌站／飯店早餐</strong><p>08:00–09:00 優先嘗試 ESPRESSO D WORKS 札幌店的法式吐司；早晨是否供應指定款待確認</p></article>
@@ -1344,6 +1374,7 @@
           
 <!-- day 8 v3 -->
           <div class="tab-panel" id="day8" role="tabpanel" aria-labelledby="tab8">
+<a class="route-quick" href="#route-day8">📍 本日 Google Maps 路線 ↗</a>
             <div class="day-header"><h3>Day 8｜12/24（四） 新千歲機場｜SNOWS・機場限定周邊・回台</h3><div class="day-note">四人預計同班搭酷航 <strong>TR893 12/24 18:15 新千歲 → 22:05 桃園</strong>，目前尚未出票。<strong>一般六花亭、ROYCE'、LeTAO 伴手禮可考慮留到新千歲機場集中購買，品牌限定、季節限定或怕售完的商品則提早買</strong>；實際價格與庫存不保證相同。12/24 上午可安排<strong>三上商店 08:30–10:00 吃帝王蟹</strong>，但須先確認現煮及內用指定蟹並把大件行李寄放在飯店。國內線航廈安檢前有 SNOWS、Pokémon Store、MUJI to GO 等候選；<strong>不可為了購物壓縮退稅、託運與出境時間</strong>。</div></div>
             <div class="day-summary"><div><b>交通</b>札幌→新千歲</div><div><b>購物</b>SNOWS／寶可夢</div><div><b>提醒</b>退稅與託運</div></div>
             <div class="meal-strip" aria-label="12/24（四）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>三上商店帝王蟹／飯店早餐</strong><p>08:30–10:00 若選三上，否則飯店吃早餐；18:15 預計回台</p></article>
@@ -1372,6 +1403,24 @@
       </div>
     </section>
 
+<section id="routes"><div class="container"><div class="section-card">
+<h2>🗺️ 每日路線圖｜Google Maps 一鍵導航</h2>
+<p class="sub"><strong>8 天走法已整理</strong>；12/19 A 東京／B 北海道分開，12/20 兩組會合。選日期就看到當天會怎樣移動，下方每段按鈕會開啟 Google Maps 電車、步行或開車導航。以<strong>站名／明確地標</strong>做起終點，等飯店訂好再換飯店地址。</p>
+<div class="route-tip"><strong>怎麼使用：</strong>冬天先看即時列車班次與步行積雪狀況。Google Maps 連結是即時查路線，<strong>不是固定時刻表或訂位</strong>；不同移動方式分段導航比較準確。12/22 的開車路線只是地理參考，不保證一日團會開同一路線。</div>
+<div class="route-accordion"><details class="route-day" id="route-day1" ><summary><span class="route-date">12/17（四）</span><span class="route-title">A 組｜成田入境東京</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>成田 NRT 18:30 → 大門／濱松町飯店 → 晚餐休息</p><p class="route-note">飯店尚未確定；成田直通大門只限部分 Access 特急班次。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Narita%20International%20Airport&amp;destination=Daimon%20Station%20Tokyo&amp;travelmode=transit">🗺️ NRT → 大門站 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day1">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day2" open><summary><span class="route-date">12/18（五）</span><span class="route-title">A 組｜新美術館・原宿・澀谷</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>飯店 → 國立新美術館10:00室內攝影 → 原宿 Chiikawa Land → HUMAN MADE 原宿／TOKYO → 球鞋店／表參道 → 澀谷 PARCO（任天堂、寶可夢、HUMAN MADE）→ mont-bell 澀谷 → YORONIKU（若訂到）</p><p class="route-note">美術館→原宿搭千代田線；原宿步行串店。YORONIKU 若有早時段，mont-bell 改其他分店。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Daimon%20Station%20Tokyo&amp;destination=The%20National%20Art%20Center%20Tokyo&amp;travelmode=transit">🗺️ 大門 → 新美術館 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=The%20National%20Art%20Center%20Tokyo&amp;destination=Meiji-jingumae%20Station&amp;travelmode=transit">🗺️ 新美術館 → 原宿 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=HUMAN%20MADE%20HARAJUKU&amp;destination=HUMAN%20MADE%20TOKYO%206-25-10%20Jingumae&amp;travelmode=walking">🗺️ 原宿 HUMAN MADE 步行 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Shibuya%20PARCO%20Tokyo&amp;destination=mont-bell%20Shibuya&amp;travelmode=walking">🗺️ 澀谷 PARCO → mont-bell ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day2">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day3a" ><summary><span class="route-date">12/19（六）</span><span class="route-title">A 組｜池袋吉伊卡哇樂園</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>飯店 → 池袋東口 → Pokémon Center MEGA TOKYO → Sunshine City Annex B1F 12:05 集合 → Chiikawa Park 12:20已訂票 → 池袋 PARCO／mont-bell 池袋東武（選去）→ 入鹿或 Afro Beats</p><p class="route-note">樂園和寶可夢中心在不同建物區；樂園時間不能改，不用為餐廳或商店趕時間。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Daimon%20Station%20Tokyo&amp;destination=Ikebukuro%20Station&amp;travelmode=transit">🗺️ 大門 → 池袋站 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Ikebukuro%20Station%20East%20Exit&amp;destination=Pokemon%20Center%20Mega%20Tokyo&amp;travelmode=walking">🗺️ 池袋 → 寶可夢中心 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Pokemon%20Center%20Mega%20Tokyo&amp;destination=Chiikawa%20Park%20Tokyo&amp;travelmode=walking">🗺️ 寶可夢 → 樂園入口 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Ikebukuro%20Station&amp;destination=Iruca%20Tokyo%20Roppongi&amp;travelmode=transit">🗺️ 池袋 → 入鹿 TOKYO ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day3">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day3b" ><summary><span class="route-date">12/19（六）</span><span class="route-title">B 組｜新千歲入境・達摩成吉思汗</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>TR892 桃園12:15 → 新千歲17:00 → JR快速Airport → 札幌飯店寄行李 → すすきの達摩6・4店（晚餐）</p><p class="route-note">預估19:00～20:00才到市區；先到飯店放行李，達摩無法訂位。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=New%20Chitose%20Airport&amp;destination=Sapporo%20Station&amp;travelmode=transit">🗺️ 新千歲 → 札幌站 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=Daruma%206.4%20Sapporo&amp;travelmode=transit">🗺️ 札幌站 → 達摩 6・4店 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day3">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day4a" ><summary><span class="route-date">12/20（日）</span><span class="route-title">A 組｜羽田飛新千歲</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>東京飯店 → 濱松町／大門 → 羽田機場 → 新千歲 → JR 札幌 → 飯店 → 大丸與B組會合</p><p class="route-note">日本國內線仍未訂；下午大丸會合15:00～16:00只是暫定。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hamamatsucho%20Station&amp;destination=Haneda%20Airport%20Terminal%202&amp;travelmode=transit">🗺️ 濱松町 → 羽田 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=New%20Chitose%20Airport&amp;destination=Sapporo%20Station&amp;travelmode=transit">🗺️ 新千歲 → 札幌站 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day4">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day4b" ><summary><span class="route-date">12/20（日）</span><span class="route-title">B 組｜札幌自由上午</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>札幌飯店 → 大通 → さえら三明治／奧芝駅前創成寺（二選一）→ 大丸札幌集合</p><p class="route-note">B組前晚已住札幌；若要逛mont-bell札幌Factory可選去，但不得影響會合。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=Saera%20Sapporo&amp;travelmode=transit">🗺️ 札幌站 → さえら ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Saera%20Sapporo&amp;destination=Daimaru%20Sapporo&amp;travelmode=walking">🗺️ さえら → 大丸札幌 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=mont-bell%20Sapporo%20Factory&amp;travelmode=transit">🗺️ 札幌站 → mont-bell Factory ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day4">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day4c" ><summary><span class="route-date">12/20（日）</span><span class="route-title">四人｜大丸・赤磚・聖誕市集</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>大丸札幌 → 赤磚廳舍白色戀人客製鐵盒（17:00截止）→ mont-bell赤れんがTerrace（有空才去）→ 大通聖誕市集 → 德壽K-place白老牛</p><p class="route-note">mont-bell與赤磚廳舍相近，但不能為它錯過17:00客製鐵盒截止。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Daimaru%20Sapporo&amp;destination=Former%20Hokkaido%20Government%20Office&amp;travelmode=walking">🗺️ 大丸 → 赤磚廳舍 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Former%20Hokkaido%20Government%20Office&amp;destination=mont-bell%20Sapporo%20Akarenga%20Terrace&amp;travelmode=walking">🗺️ 赤磚 → mont-bell ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Odori%20Park%20Sapporo&amp;destination=Tokuju%20K-place%20Sapporo&amp;travelmode=walking">🗺️ 大通 → 德壽 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day4">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day5" open><summary><span class="route-date">12/21（一）</span><span class="route-title">四人｜小樽三角市場・運河・天狗山</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>札幌JR → 小樽站 → 三角市場看帝王蟹／毛蟹（方案A）→ 堺町通LeTAO／六花亭 → 小樽運河15:40～16:50藍調 → 天狗山夜景 → 札幌</p><p class="route-note">帝王蟹必吃，不是預算問題。若改選三上商店吃帝王蟹，當天三角市場可吃毛蟹／海鮮丼。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=Otaru%20Station&amp;travelmode=transit">🗺️ 札幌 → 小樽（JR） ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Otaru%20Station&amp;destination=Otaru%20Sankaku%20Market&amp;travelmode=walking">🗺️ 小樽站 → 三角市場 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=LeTAO%20Main%20Store%20Otaru&amp;destination=Otaru%20Canal&amp;travelmode=walking">🗺️ 堺町通 → 小樽運河 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Otaru%20Canal&amp;destination=Otaru%20Tenguyama%20Ropeway&amp;travelmode=transit">🗺️ 運河 → 天狗山纜車 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day5">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day6" ><summary><span class="route-date">12/22（二）</span><span class="route-title">四人｜旭山動物園・美瑛點燈</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>札幌 → 旭山動物園 → 白鬚瀑布 → 白金青池冬季夜間點燈 → 札幌</p><p class="route-note">這是包車／一日團的路線概念，Google地圖僅作地理參考，團車和冬季路況為準；確認是否有青池夜間停留。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=Shirogane%20Blue%20Pond&amp;travelmode=driving">🗺️ 包車景點串連（概念） ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Shirogane%20Blue%20Pond&amp;destination=Sapporo%20Station&amp;travelmode=driving">🗺️ 青池 → 札幌 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day6">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day7a" ><summary><span class="route-date">12/23（三）</span><span class="route-title">四人｜神宮・佐藤・PARCO・HUMAN MADE</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>10:00大丸SNOW CHEESE → 11:00北海道神宮 → 13:00 GARAKU／奧芝／豬排檍午餐擇一 → 15:00佐藤聖代 → PARCO分組 → 17:30 HUMAN MADE SAPPORO → 狸小路藥妝 → COCONO超市與晚餐</p><p class="route-note">主線保留湯咖哩；HUMAN MADE札幌19:00關門，應在17:30～18:00先逛。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Daimaru%20Sapporo&amp;destination=Hokkaido%20Jingu%20Shrine&amp;travelmode=transit">🗺️ 大丸 → 北海道神宮 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hokkaido%20Jingu%20Shrine&amp;destination=Soup%20Curry%20GARAKU%20Sapporo&amp;travelmode=transit">🗺️ 神宮 → GARAKU ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20PARCO&amp;destination=HUMAN%20MADE%20SAPPORO&amp;travelmode=walking">🗺️ 札幌PARCO → HUMAN MADE ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=HUMAN%20MADE%20SAPPORO&amp;destination=COCONO%20SUSUKINO&amp;travelmode=walking">🗺️ HUMAN MADE → COCONO ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day7">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day7b" ><summary><span class="route-date">12/23（三）</span><span class="route-title">帝王蟹選址 B｜神宮 → 三上商店</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>北海道神宮11:00～12:00 → 円山公園站 → 二十四軒站 → 12:20～13:45三上商店吃帝王蟹 → 15:00佐藤聖代 → PARCO</p><p class="route-note">這是替換整個GARAKU湯咖哩午餐的選項，不是再加一頓；須先電話確認指定帝王蟹現煮、內用與時間。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hokkaido%20Jingu%20Shrine&amp;destination=Marusan%20Mikami%20Shoten%20Sapporo&amp;travelmode=transit">🗺️ 神宮 → 三上商店 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Marusan%20Mikami%20Shoten%20Sapporo&amp;destination=Parfait%20Coffee%20and%20Sake%20Sato&amp;travelmode=transit">🗺️ 三上 → 佐藤聖代 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day7">← 看當天詳細時間軸</a></div></div></details>
+<details class="route-day" id="route-day8" ><summary><span class="route-date">12/24（四）</span><span class="route-title">四人｜三上商店早上候選・18:15回程</span><span class="route-crumb">展開 ▾</span></summary><div class="route-body"><p class="route-path"><b>📍 移動順序：</b>08:30～10:00三上商店吃帝王蟹（方案C／若還沒吃）→ 返回札幌飯店取行李 → 約12:00～13:00 JR去新千歲 → SNOWS／札幌農學校 → 國際線報到 → TR893 18:15起飛</p><p class="route-note">如果12/21或12/23已吃帝王蟹就取消三上段；現煮內用必須先確認。放行李飯店，不拖大行李跑市場。</p><div class="route-links"><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=Marusan%20Mikami%20Shoten%20Sapporo&amp;travelmode=transit">🗺️ 札幌站 → 三上商店 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Marusan%20Mikami%20Shoten%20Sapporo&amp;destination=Sapporo%20Station&amp;travelmode=transit">🗺️ 三上商店 → 札幌站 ↗</a><a class="route-map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Sapporo%20Station&amp;destination=New%20Chitose%20Airport&amp;travelmode=transit">🗺️ 札幌站 → 新千歲機場 ↗</a></div><div class="route-return"><a href="#itinerary" data-goto-day="day8">← 看當天詳細時間軸</a></div></div></details></div>
+<p class="fine-print">部分店家位於百貨或商場內，Google Maps 導航可能只到建築入口，還要查看樓層指示。大型行李、雪路、候車、停車及轉車時間須額外預留。</p>
+</div></div></section>
 <section id="meal-plan"><div class="container"><div class="section-card">
 <h2>🍽️ 八天三餐總覽｜主案與備案</h2>
 <p>依 12/17～12/24 <strong>A、B 兩組分別出發</strong>的最新行程重新整理；12/19 兩組午晚餐不同，12/20 晚上開始四人共同行程。<strong>每一格先看主要選項，後面備註為替換方案</strong>，不是每間都要吃；沒有成功預訂的餐廳不視為已確認。</p>
