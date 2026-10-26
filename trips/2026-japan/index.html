@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>東京＋北海道冬日旅程｜2026/12/17–12/24 V14</title>
+  <title>東京＋北海道冬日旅程｜2026/12/17–12/24 V15</title>
   <meta name="description" content="東京與北海道冬日旅遊行程網站，含航班、每日行程、住宿、待辦清單、冬季美食與倒數。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -783,6 +783,16 @@
  .meal-matrix tr td:last-child{border-bottom:0}
 }
 
+/* V15 group A/B timelines */
+.group-banner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:16px 0}
+.group-banner-card{border:3px solid var(--ink);border-radius:21px;box-shadow:var(--shadow);padding:14px}
+.group-banner-card.group-a{background:#fff1eb}.group-banner-card.group-b{background:#edf6fa}
+.group-banner-card strong{display:block;margin:8px 0 4px}.group-banner-card p{margin:0;font-size:.91rem}
+.group-itinerary{padding:16px 14px 10px;border:3px solid var(--ink);border-radius:24px;margin:20px 0;background:#fffefb}
+.group-itinerary.group-tokyo{border-top:8px solid var(--pink)}.group-itinerary.group-sapporo{border-top:8px solid var(--blue)}
+.group-itinerary.group-merge{border-top:8px solid var(--green)}
+.group-lane-title{font-size:1.13rem;margin:0 0 14px}
+@media(max-width:760px){.group-banner{grid-template-columns:1fr}.group-itinerary{padding:12px 10px 8px}}
   </style>
 </head>
 <body>
@@ -825,7 +835,7 @@
                 </div>
                 <div class="mini-card">
                   <div>旅遊日期</div>
-                  <strong>12/17 → 12/24</strong>
+                  <strong>A 12/17・B 12/19 → 12/24</strong>
                 </div>
                 <div class="mini-card">
                   <div>旅遊重點</div>
@@ -898,62 +908,23 @@
       </div>
     </section>
 
-    <section id="flights">
-      <div class="container">
-        <div class="section-card">
-          <h2>✈️ 航班卡片</h2>
-          <div class="flight-grid">
-            <article class="flight-card">
-              <div class="flight-head">
-                <div>
-                  <div class="pill pink">去程國際線</div>
-                  <div class="route">台灣 → 東京（成田）</div>
-                  <div class="sub">2026 / 12 / 17（四）｜下午或晚上抵達</div>
-                </div>
-                <div class="pill">待確認</div>
-              </div>
-              <p>
-                建議抵達成田後入住東京市區，方便接下來兩天逛原宿、澀谷、池袋與聖誕燈飾。
-              </p>
-            </article>
+    <section id="flights"><div class="container"><div class="section-card">
+<h2>✈️ 航班卡片｜A、B 兩組分開出發</h2>
+<p class="sub">2026/10/26 依酷航截圖的<strong>預計搭乘航班</strong>整理。<strong>航班未確認已出票</strong>，價格也不視為已付款；唯一已確定的是 A 組 12/19 12:20 吉伊卡哇樂園入園門票（票數依訂單確認）。時間為起降地當地時間。</p>
+<div class="flight-grid">
+<article class="flight-card"><div class="flight-head"><div><div class="pill pink">A 組｜東京先行・2 人</div><div class="route">12/17 桃園 TPE → 成田 NRT</div><div class="sub">酷航 TR874｜14:25 → 18:30・B787-9</div></div><div class="pill yellow">預計／未出票</div></div><p>週四 18:30 才落地成田。入境、領行李與進城後，預估 <strong>20:30–21:30</strong> 左右才到東京飯店，當晚簡單晚餐即可。截圖顯示去程曾選豪華經濟艙／30kg 託運，需在付款前再核對。</p></article>
+<article class="flight-card"><div class="flight-head"><div><div class="pill blue">B 組｜北海道直飛・2 人</div><div class="route">12/19 桃園 TPE → 新千歲 CTS</div><div class="sub">酷航 TR892｜12:15 → 17:00・B787-9</div></div><div class="pill yellow">預計／未出票</div></div><p>週六直接飛札幌，不到東京，也不參與當天池袋樂園。入境後搭 JR 快速 Airport 到札幌，<strong>約 19:00–20:00 抵達市區飯店</strong>（視通關及交通），晚上先吃成吉思汗。</p></article>
+<article class="flight-card"><div class="flight-head"><div><div class="pill blue">A 組｜東京轉北海道・2 人</div><div class="route">12/20 羽田 HND → 新千歲 CTS</div><div class="sub">週日早班國內線｜航空公司、班次待確認</div></div><div class="pill yellow">待訂</div></div><p>從東京住處早起前往羽田，抵達札幌後<strong>暫定 15:00–16:00 在大丸札幌 1F 與 B 組會合</strong>，實際時間以國內線航班確定後調整。</p></article>
+<article class="flight-card"><div class="flight-head"><div><div class="pill green">A＋B 組｜四人一起回台</div><div class="route">12/24 新千歲 CTS → 桃園 TPE</div><div class="sub">酷航 TR893｜18:15 → 22:05・B787-9</div></div><div class="pill yellow">預計／未出票</div></div><p>四人預計同班回程，為逛新千歲機場伴手禮，建議約 <strong>13:00</strong> 從札幌出發，約 <strong>15:15</strong> 前後到國際線報到。<strong>託運提醒：</strong>A 組截圖的 Basic 似乎不含託運、B 組來回試算含 20kg，務必分開核對每人額度。</p></article>
+</div>
+<div class="note-warn" style="margin-top:14px"><strong>分組原則：</strong>12/19 A 組留東京使用吉伊卡哇樂園已訂門票；B 組同日直飛北海道、先吃烤羊肉。<strong>12/20 才四人在札幌會合</strong>，不用兩組在 12/19 互相等待。</div>
+</div></div></section>
 
-            <article class="flight-card">
-              <div class="flight-head">
-                <div>
-                  <div class="pill blue">日本國內線</div>
-                  <div class="route">東京 → 札幌（新千歲）</div>
-                  <div class="sub">2026 / 12 / 20（日）｜早上出發</div>
-                </div>
-                <div class="pill blue">ANA / 待確認</div>
-              </div>
-              <p>
-                建議上午班機，抵達後可前往札幌市區、吃美食並逛冬季聖誕市集。
-              </p>
-            </article>
-
-            <article class="flight-card">
-              <div class="flight-head">
-                <div>
-                  <div class="pill green">回程國際線</div>
-                  <div class="route">札幌（新千歲） → 台灣</div>
-                  <div class="sub">2026 / 12 / 24（四）｜回台北或台中</div>
-                </div>
-                <div class="pill green">二擇一</div>
-              </div>
-              <p>
-                可依最終票價決定回桃園或台中；當天建議預留時間採買 SNOWS 與辦理退稅／託運。
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="itinerary">
+<section id="itinerary">
       <div class="container">
         <div class="section-card">
           <h2>🗓️ 每日行程</h2>
-          <p class="fine-print">日期為 2026/12/17～12/24；列出的時間是規劃窗口，非已購票或確認訂位。<strong>重點</strong>為主要安排，<strong>選去</strong>及<strong>需預約</strong>視現場與訂位狀況調整。</p>
+          <p class="fine-print">日期為 2026/12/17～12/24；12/19 分 A 東京組與 B 札幌組兩路，12/20 札幌會合。<strong>12/19 12:20 吉伊卡哇樂園已訂票</strong>；航班及餐廳尚未確認出票／訂位。<strong>重點</strong>為主要安排，<strong>選去</strong>及<strong>需預約</strong>視現場與訂位狀況調整。</p>
 
           <div class="tabs" role="tablist" aria-label="日期切換">
             <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="day1" id="tab1">
@@ -963,10 +934,10 @@
               <strong>12/18</strong><small>購物・PARCO</small>
             </button>
             <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day3" id="tab3">
-              <strong>12/19</strong><small>寶可夢・入鹿</small>
+              <strong>12/19</strong><small>A 東京／B 札幌</small>
             </button>
             <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day4" id="tab4">
-              <strong>12/20</strong><small>飛往札幌</small>
+              <strong>12/20</strong><small>兩組會合</small>
             </button>
             <button class="tab-btn" role="tab" aria-selected="false" aria-controls="day5" id="tab5">
               <strong>12/21</strong><small>運河藍調・天狗山</small>
@@ -984,25 +955,25 @@
 
 <!-- day 1 v3 -->
           <div class="tab-panel active" id="day1" role="tabpanel" aria-labelledby="tab1">
-            <div class="day-header"><h3>Day 1｜12/17（四） 東京抵達・丸之內聖誕氣氛</h3><div class="day-note">航班尚未確認。先辦理入境、入住；壽喜燒與寶可夢咖啡廳只能作為「抵達夠早＋訂到位」的候選，勿預付不可退款訂金。</div></div>
+            <div class="day-header"><h3>Day 1｜12/17（四） 東京抵達・丸之內聖誕氣氛</h3><div class="day-note">A 組 2 人預計搭酷航 TR874，<strong>12/17 14:25 桃園出發、18:30 到成田</strong>。東京飯店約 20:30–21:30 才能入住；這晚不硬排丸之內、壽喜燒或寶可夢咖啡廳。航班未出票。B 組 12/19 直飛札幌。</div></div>
             <div class="day-summary"><div><b>城市</b>東京</div><div><b>餐飲</b>晚餐彈性</div><div><b>重點</b>旅途緩衝</div></div>
             <div class="meal-strip" aria-label="12/17（四）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>出發前／機場早餐</strong><p>依台灣出發航班彈性安排</p></article>
-<article class="meal-pill"><span class="meal-label">🍱 午餐</span><strong>機上餐或機場簡餐</strong><p>是否能在東京吃午餐待班機確認</p></article>
-<article class="meal-pill"><span class="meal-label">🌙 晚餐</span><strong>品川／東京站簡餐</strong><p>如抵達夠早才預約今半壽喜燒；不強迫趕車</p></article></div>
-<div class="meal-remark">🍽️ 抵達日的三餐都已列出，但午、晚餐仍以航班與入境時間調整。豬排檍已更正為<strong>札幌分店候選</strong>，東京抵達日不排。</div>
+<article class="meal-pill"><span class="meal-label">🍱 午餐</span><strong>機上餐或機場簡餐</strong><p>台灣出發前／機場或機上簡餐</p></article>
+<article class="meal-pill"><span class="meal-label">🌙 晚餐</span><strong>東京住宿附近簡餐</strong><p>到東京後約 20:30–21:30，附近用餐即可</p></article></div>
+<div class="meal-remark">🍽️ TR874 18:30 才抵達成田，午餐先在台灣或機上，東京晚餐以入住房間後能就近吃到為優先。豬排檍已更正為<strong>札幌分店候選</strong>，東京抵達日不排。</div>
 <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
-          <div class="timeline-time">依航班</div><div class="timeline-card"><div class="timeline-title"><strong>抵達成田機場・前往東京飯店</strong><span class="status ">重點</span></div>
+          <div class="timeline-time">14:25–18:30</div><div class="timeline-card"><div class="timeline-title"><strong>抵達成田機場・前往東京飯店</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag flight">✈️ 航班</span></div>
-          <p>東京飯店候選為品川王子；成田機場可研究 N’EX 至品川，羽田機場可搭京急線。依最終班機與飯店塔別決定。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
-          <div class="timeline-time">傍晚</div><div class="timeline-card"><div class="timeline-title"><strong>飯店寄放行李／入住</strong><span class="status ">重點</span></div>
+          <p>A 組預計搭 <strong>TR874 桃園 14:25 → 成田 18:30</strong>。進城若選大門／濱松町，可以找京成 Access 特急與淺草線直通、且停靠大門的車次；是否免轉乘仍要依當晚時刻表。東京飯店尚未訂，優先比較名鐵 INN 濱松町、三井花園汐留義大利街、APA 泉岳寺。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">約20:30–21:30</div><div class="timeline-card"><div class="timeline-title"><strong>飯店寄放行李／入住</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
-          <p>品川王子大飯店為候選住宿（尚未訂房）。整理行李與冬季外套，保留隔天購物體力。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
-          <div class="timeline-time">19:00 起</div><div class="timeline-card"><div class="timeline-title"><strong>東京車站・丸之內聖誕散步</strong><span class="status ">重點</span></div>
+          <p>東京住處仍未決定，優先大門／濱松町附近的名鐵 INN、三井花園或 APA 品川泉岳寺；到飯店先卸行李與休息。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-time">晚間・體力允許</div><div class="timeline-card"><div class="timeline-title"><strong>東京車站・丸之內聖誕散步</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
-          <p>若抵達東京市區時間足夠，走訪丸之內大樓「MARUNOUCHI BRIGHT HOLIDAY × 哈利波特」主題聖誕樹（2026/11/12～12/25），再逛東京車站／丸之內燈飾並吃晚餐。<a href="https://www.warnerbros.co.jp/news/m2d789g_s/" target="_blank" rel="noopener noreferrer">活動官方公告 ↗</a>；若航班較晚則只吃飯、休息。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
+          <p>18:30 才到成田，這段降為選去：若入境進城很快、體力夠，才走訪丸之內大樓「MARUNOUCHI BRIGHT HOLIDAY × 哈利波特」主題聖誕樹（2026/11/12～12/25），再逛東京車站／丸之內燈飾並吃晚餐。<a href="https://www.warnerbros.co.jp/news/m2d789g_s/" target="_blank" rel="noopener noreferrer">活動官方公告 ↗</a>；若進城已接近 21:00，就直接吃飯、休息。</p></div></li><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">選去</div><div class="timeline-card"><div class="timeline-title"><strong>人形町今半／寶可夢咖啡廳</strong><span class="status optional">選去</span></div>
           <div class="transport-tags"><span class="tag train">🚆 電車／地鐵</span></div>
-          <p><strong>僅在航班夠早而且訂到位時</strong>，安排壽喜燒（今半日本橋周邊分店）或日本橋 Pokémon Café；兩者不必同時排。</p></div></li></ol>
+          <p><strong>本趟 TR874 18:30 才到成田，<strong>不建議安排這晚需長時間用餐的今半或咖啡廳</strong>，留待其他日期或下次：</strong>，安排壽喜燒（今半日本橋周邊分店）或日本橋 Pokémon Café；兩者不必同時排。</p></div></li></ol>
           </div>
           
 <!-- day 2 v3 -->
@@ -1039,12 +1010,12 @@
           
 <!-- day 3 v3 -->
           <div class="tab-panel" id="day3" role="tabpanel" aria-labelledby="tab3">
-            <div class="day-header"><h3>Day 3｜12/19（六）池袋｜12:20 吉伊卡哇樂園已訂票・寶可夢 MEGA TOKYO</h3><div class="day-note"><strong>🎟️ 已訂票：12/19（六）12:20 入場 Chiikawa Park！</strong> 建議 <strong>12:05 前全員到 Sunshine City Annex B1F 專用入口</strong>，避免遲到。早上先去 Pokémon Center MEGA TOKYO；午餐改快速簡餐或出園後吃，原本 10:00 的樂園時段已移至 12:20。池袋其他商店與傍晚拉麵視樂園實際停留調整。</div></div>
+            <div class="day-header"><h3>Day 3｜12/19（六）雙組分流｜東京樂園 × 北海道烤羊肉</h3><div class="day-note"><strong>A 東京組（2 人）</strong>上午逛池袋，<strong>12:20 已訂票的吉伊卡哇樂園</strong>固定不動（12:05 前集合）。<strong>B 北海道組（2 人）</strong>搭 TR892 12:15 桃園 → 17:00 新千歲，當晚先吃札幌成吉思汗。兩組<strong>12/20 才在札幌會合</strong>；航班目前只是預選／未確認出票。</div></div>
             <div class="day-summary"><div><b>🎟️ 已訂門票</b>12:20 吉伊卡哇樂園</div><div><b>上午</b>寶可夢 MEGA TOKYO</div><div><b>晚餐</b>入鹿／Afro Beats 擇一</div></div>
-            <div class="meal-strip" aria-label="12/19（六）早午晚餐安排"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>東京住宿附近早餐</strong><p>約 08:00–09:00，出發前吃完</p></article>
-<article class="meal-pill"><span class="meal-label">🍱 午餐</span><strong>池袋簡餐／出園後正餐</strong><p>11:10–11:45 快速吃；若來不及，出園後再吃；原本今半／五感需完全避開 12:20 場次</p></article>
-<article class="meal-pill"><span class="meal-label">🌙 晚餐</span><strong>六本木 入鹿 TOKYO 拉麵</strong><p>17:30 後依實際出園時間，入鹿／Afro Beats 二選一</p></article></div>
-<div class="meal-remark">🍽️ 12:20 吉伊卡哇樂園<strong>已訂票、固定不能更動</strong>；原本 12:00–13:30 的正餐時間已移開。今半、五感、吉伊卡哇餐廳／拉麵豚，只在不衝突時作候選，否則簡餐或出園後再吃。</div>
+            <div class="group-banner"><article class="group-banner-card group-a"><span class="pill pink">A 組｜東京 2 人</span><strong>寶可夢 → 吉伊卡哇樂園 → 入鹿拉麵</strong><p>上午池袋、<strong>12:20 已訂樂園</strong>，12/20 再飛札幌。</p></article><article class="group-banner-card group-b"><span class="pill blue">B 組｜北海道 2 人</span><strong>TR892 飛新千歲 → 札幌飯店 → だるま成吉思汗</strong><p>日本 17:00 落地，札幌飯店約 19:00–20:00 才抵達。</p></article></div>
+<div class="group-itinerary group-tokyo"><h4 class="group-lane-title">🗼 A 組｜東京池袋・吉伊卡哇樂園</h4>
+<div class="meal-strip" aria-label="12/19 A 組三餐"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>東京住宿附近</strong><p>08:00–09:00</p></article><article class="meal-pill"><span class="meal-label">🍱 午餐</span><strong>池袋快速簡餐</strong><p>11:10–11:45 或出園後吃</p></article><article class="meal-pill"><span class="meal-label">🌙 晚餐</span><strong>入鹿／Ramen Afro Beats</strong><p>17:30 後看離園時間</p></article></div>
+<div class="meal-remark">🎟️ 12:20 吉伊卡哇樂園已訂，12:05 前全員到 Sunshine City Annex B1F。這組只含東京兩位，不能為餐廳衝突入場。</div>
 <ol class="timeline"><li class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span>
           <div class="timeline-time">10:00–11:10</div><div class="timeline-card"><div class="timeline-title"><strong>Pokémon Center MEGA TOKYO＋Pikachu Sweets</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
@@ -1073,6 +1044,18 @@
           <div class="timeline-time">入夜後</div><div class="timeline-card"><div class="timeline-title"><strong>六本木櫸木坂燈飾・夜間散步</strong><span class="status ">重點</span></div>
           <div class="transport-tags"><span class="tag walk">🚶 步行</span></div>
           <p>若晚餐選六本木且還有體力，再順路拍夜景與燈飾，回飯店整理行李，準備隔天飛札幌。</p></div></li></ol>
+</div><!-- end A group -->
+<div class="group-itinerary group-sapporo"><h4 class="group-lane-title">❄️ B 組｜直飛新千歲、札幌羊肉晚餐</h4>
+<div class="meal-strip" aria-label="12/19 B 組三餐"><article class="meal-pill"><span class="meal-label">🌅 早餐</span><strong>台灣出發前</strong><p>先吃飽去桃園機場</p></article><article class="meal-pill"><span class="meal-label">🍱 午餐</span><strong>桃園機場／機上</strong><p>TR892 12:15 起飛</p></article><article class="meal-pill"><span class="meal-label">🌙 晚餐</span><strong>札幌 だるま成吉思汗</strong><p>20:00 前後視通關、候位決定</p></article></div>
+<ol class="timeline">
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">約09:15–10:00</div><div class="timeline-card"><div class="timeline-title"><strong>桃園機場 T1 報到</strong><span class="status booking">航班未出票</span></div><div class="transport-tags"><span class="tag flight">✈️ 酷航 TR892</span></div><p>國際線建議起飛前 2.5–3 小時到機場，確認報到、安檢及行李託運；目前試算票種頁<strong>標示含 20kg 託運</strong>，出票時再次核對。</p></div></li>
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">12:15–17:00</div><div class="timeline-card"><div class="timeline-title"><strong>TR892｜桃園直飛新千歲</strong><span class="status">航班預選</span></div><div class="transport-tags"><span class="tag flight">✈️ B787-9</span></div><p>台灣時間 12:15 起飛、日本時間 17:00 抵達。出關、領行李、海關預留約 40–80 分鐘，實際可能更久。<strong>B 組不前往東京樂園</strong>。</p></div></li>
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">約17:50–19:30</div><div class="timeline-card"><div class="timeline-title"><strong>新千歲 → 札幌｜JR 快速 Airport</strong><span class="status">機場移動</span></div><div class="transport-tags"><span class="tag train">🚆 列車約 37–43 分</span></div><p>國際線到達後按指標前往連通的 JR 新千歲空港站，搭快速 Airport 到札幌。<strong>含出關與候車，預估 19:00–20:00 左右到市區飯店</strong>。<a href="https://www.jrhokkaido.co.jp/airport/" target="_blank" rel="noopener noreferrer">JR 北海道官方 ↗</a></p></div></li>
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">約19:15–20:00</div><div class="timeline-card"><div class="timeline-title"><strong>札幌飯店入住、先放行李</strong><span class="status">先做</span></div><div class="transport-tags"><span class="tag walk">🧳 札幌站周邊</span></div><p><strong>B 組需住 12/19～12/24 共 5 晚</strong>，建議與 A 組 12/20～12/24 同一家札幌飯店，但 B 組多住一晚。飯店還在京王 Prelia／GRANBELL／Monterey Edelhof 候選，尚未訂。</p></div></li>
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">約20:00–21:30</div><div class="timeline-card"><div class="timeline-title"><strong>成吉思汗 だるま 6・4店／5・5店</strong><span class="must-go">B 組先吃</span></div><div class="transport-tags"><span class="tag train">🚇 すすきの 薄野</span></div><p><strong>首選 6・4店</strong>（札幌市中央區南6條西4丁目 野口ビル 1F）。官方 <strong>17:00～翌05:00、L.O.04:30、無法預約</strong>；推薦點經典成吉思汗、上肉、ヒレ。週六晚上可能要排隊；也可走去 5・5店比較人潮，若雪天隊伍太長就換附近熱食，別空腹久等。<a href="https://sapporo-jingisukan.info/64ten" target="_blank" rel="noopener noreferrer">だるま 6・4店官方 ↗</a></p></div></li>
+<li class="timeline-item"><span class="timeline-dot"></span><div class="timeline-time">22:00 前後</div><div class="timeline-card"><div class="timeline-title"><strong>回札幌飯店・和 A 組確認隔天會合</strong><span class="status optional">彈性</span></div><div class="transport-tags"><span class="tag train">🚇 地鐵／計程車</span></div><p>整理行李、保暖休息；12/20 暫定大丸札幌 1F 會合時間，等 A 組國內線確定後再互相確認。</p></div></li>
+</ol></div>
+<div class="note-warn"><strong>兩組晚餐：</strong>A 組 12/19 留在東京吃入鹿／Afro Beats；B 組先吃達摩羊肉。12/20 四人見面後優先吃德壽白老牛，避免 B 組連兩晚吃羊肉。</div>
           </div>
           
 <!-- day 4 v3 -->
@@ -1618,7 +1601,7 @@
 
     <footer class="footer">
       <div class="container">
-        東京＋北海道冬日旅程網站 ♡｜V14・美食筆記整合與三餐總覽更新<br>
+        東京＋北海道冬日旅程網站 ♡｜V15・兩組航班與 12/19 分流<br>
         可再依最終航班、飯店與每日細節繼續微調。
       </div>
     </footer>
