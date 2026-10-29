@@ -214,7 +214,7 @@
     .flight-grid{
       display:grid;
       gap:14px;
-      grid-template-columns:1fr;
+      grid-template-columns:minmax(0,1fr);
     }
 
     .flight-card{
@@ -223,6 +223,7 @@
       padding:16px;
       background:#fff;
       box-shadow:var(--shadow);
+      min-width:0;
     }
 
     .flight-head{
@@ -232,6 +233,8 @@
       gap:12px;
       margin-bottom:8px;
     }
+
+    .flight-head > div{ min-width:0; }
 
     .pill{
       display:inline-flex;
@@ -534,7 +537,7 @@
         grid-template-columns:repeat(3, minmax(0,1fr));
       }
       .flight-grid{
-        grid-template-columns:repeat(3, 1fr);
+        grid-template-columns:repeat(3, minmax(0,1fr));
       }
       .columns{
         grid-template-columns:1fr 1fr;
@@ -582,6 +585,8 @@
     .food-card p{font-size:.94rem;margin:0;}
     .note-warn{background:var(--yellow);border:var(--border);border-radius:17px;padding:12px 14px;margin-top:14px;}
     @media(max-width:540px){
+      .pill{white-space:normal;text-align:left;}
+      .flight-head{flex-wrap:wrap;}
       .photo-bands{grid-template-columns:1fr;}
       .food-grid{grid-template-columns:1fr;}
       .photo-band{padding:8px 10px;}
@@ -644,6 +649,7 @@
       .shop-list,.venue-grid{grid-template-columns:1fr}
       .tip-strip{grid-template-columns:1fr}
       .day-summary{grid-template-columns:1fr}
+      .hero-meta .mini-card:last-child:nth-child(odd){grid-column:1 / -1}
       .timeline-item{grid-template-columns:62px 1fr;gap:8px}
       .timeline-time{font-size:.86rem}
     }
